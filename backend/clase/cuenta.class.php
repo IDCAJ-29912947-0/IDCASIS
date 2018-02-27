@@ -95,14 +95,18 @@ echo $sql;
 //==============================================================================
 
    public function filtrar($cod_cue,$nom_cue,$est_cue){
-
-        $where="where 1=1";
         
         $filtro1 = ($cod_cue!="") ? "and cod_cue=$cod_cue":"";
         $filtro2 = ($nom_cue!="") ? "and nom_cue like '%$nom_cue%'":"";
         $filtro3 = ($est_cue!="") ? "and est_cue='$est_cue'":"";
 
-        $sql="select * from area $where $filtro1 $filtro2 $filtro3;";  
+        $sql="select c.*,b.nom_ban,e.nom_emp 
+              from cuenta c,banco b,empresa e
+              where 
+              fky_banco=cod_ban and 
+              fky_empresa=cod_emp 
+              $filtro1 $filtro2 $filtro3;"; 
+        return $this->ejecutar($sql);  
 
    }// Fin Filtrar
 //==============================================================================

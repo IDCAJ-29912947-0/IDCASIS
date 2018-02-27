@@ -70,8 +70,8 @@ if($acceso["est_per"]=="A")
 		<div class="col-md-4 col-12">
 		    <select name="tip_cue" id="tip_cue" class="form-control">
 		    	<option value="X">Seleccione...</option>
-		    	<option value="A">Corriente</option>
-		    	<option value="I">Ahorro</option>
+		    	<option value="C">Corriente</option>
+		    	<option value="A">Ahorro</option>
 		    </select>
 		</div>
 

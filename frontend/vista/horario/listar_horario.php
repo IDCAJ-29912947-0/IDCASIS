@@ -1,8 +1,8 @@
 <?php
-require("../../../backend/clase/cuenta.class.php");
+require("../../../backend/clase/horario.class.php");
 require("../../../backend/clase/permiso.class.php");
 
-$obj=new cuenta;
+$obj=new horario;
 $objPermiso=new permiso;
 
 $permiso=$objPermiso->validar_acceso($opcion=9,$fky_usuario=1,$token=md5("12345"));
@@ -22,7 +22,7 @@ if($acceso["est_per"]=="A")
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Listar Cuenta</title>
+	<title>Listar Horario</title>
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="stylesheet" href="../../bootstrap-4.0/css/bootstrap.min.css">
 	<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
@@ -31,45 +31,37 @@ if($acceso["est_per"]=="A")
 <body>
 
 
-<form action="listar_cuenta.php" method="POST">
+<form action="listar_horario.php" method="POST">
 
 	<div class="container-fluid">
 
 	<div class="row justify-content-center">
-	<div class="col-10 text-center ">
+	<div class="col-8 text-center ">
 
 
 	 <div class="row bg-primary text-white">
 	 	 <div class="col-12 text-center">
-	  	<h3>Datos de la Cuenta</h3>
+	  	<h3>Datos del Horario</h3>
 	 	 </div>
 	  </div>
 
 	  <div class="row mt-1 bg-primary text-white text-center">
 
-	  	<div class="col-md-2 col-12 border border-white">
+	  	<div class="col-md-3 col-12 border border-white">
 		  <i class="fas fa-eye"></i> 
 		  <i class="fas fa-edit"></i>  
 		  
 		</div>
 
-		<div class="col-md-1 col-12  border border-white">
-		     <span>Num.</span>
+		<div class="col-md-2 col-12  border border-white">
+		     <span>Código</span>
 		</div>
 
-		<div class="col-md-2 col-12 border border-white ">
-		     <span>Titular</span>
-		</div>
-		<div class="col-md-2 col-12 border border-white ">
-		     <span>Banco</span>
+		<div class="col-md-4 col-12 border border-white ">
+		     <span>Nombre del Horario</span>
 		</div>
 
-
-		<div class="col-md-3 col-12 border border-white ">
-		     <span>Número de Cuenta</span>
-		</div>
-
-		<div class="col-md-2 col-12 border border-white">
+		<div class="col-md-3 col-12 border border-white">
 		     <span>Estatus</span>
 		</div>
 
@@ -79,36 +71,27 @@ if($acceso["est_per"]=="A")
 		<?php
 		
 		$num_fil=0;
-
-		$resultado=$obj->filtrar("",$obj->nom_cue,"");
+		$resultado=$obj->filtrar("",$obj->nom_hor,"");
 		while(($datos=$obj->extraer_dato($resultado))>0){
 		$num_fil++;	
 		?>
 
-		<div class="col-md-2 col-12 border border-white text-center">
-		  <a href="<?php echo "ver_cuenta.php?cod_cue=$datos[cod_cue]"?>"><i class="fas fa-eye"></i></a> 
-		  <a href="<?php echo "modificar_cuenta.php?cod_cue=$datos[cod_cue]"?>"><i class="fas fa-edit"></i></a>  
-		</div>
-
-		<div class="col-md-1 col-12 border border-white">
-		     <span><?php echo $num_fil; ?></span>
-		</div>
-
-		<div class="col-md-2 col-12 border border-white text-left">
-		     <span><?php echo $datos['nom_cue']; ?></span>
-		</div>
-
-		<div class="col-md-2 col-12 border border-white text-left">
-		     <span><?php echo $datos['nom_ban']; ?></span>
-		</div>
-
 		<div class="col-md-3 col-12 border border-white text-center">
-		     <span><?php echo $datos['num_cue']; ?></span>
+		  <a href="<?php echo "ver_horario.php?cod_hor=$datos[cod_hor]"?>"><i class="fas fa-eye"></i></a> 
+		  <a href="<?php echo "modificar_horario.php?cod_hor=$datos[cod_hor]"?>"><i class="fas fa-edit"></i></a>  
 		</div>
 
 		<div class="col-md-2 col-12 border border-white">
+		     <span><?php echo $datos['cod_hor']; ?></span>
+		</div>
+
+		<div class="col-md-4 col-12 border border-white text-left">
+		     <span><?php echo $datos['nom_hor']; ?></span>
+		</div>
+
+		<div class="col-md-3 col-12 border border-white">
 		     <span>
-		     	<?php echo ($datos['est_cue']=="A") ? "Activa":"Inactiva"; ?>
+		     	<?php echo ($datos['est_hor']=="A") ? "Activa":"Inactiva"; ?>
 		     </span>
 		</div>
 		

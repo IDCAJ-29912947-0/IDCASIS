@@ -1,8 +1,8 @@
 <?php
-require("../../../backend/clase/cuenta.class.php");
+require("../../../backend/clase/horario.class.php");
 require("../../../backend/clase/permiso.class.php");
 
-$obj=new cuenta;
+$obj=new horario;
 $objPermiso=new permiso;
 
 $permiso=$objPermiso->validar_acceso($opcion=8,$fky_usuario=1,$token=md5("12345"));
@@ -16,13 +16,13 @@ if($acceso["est_per"]=="A")
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Filtrar Cuenta</title>
+	<title>Filtrar Horario</title>
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="stylesheet" href="../../bootstrap-4.0/css/bootstrap.min.css">
 </head>
 <body>
 
-<form action="listar_cuenta.php" method="POST">
+<form action="listar_horario.php" method="POST">
 
 	<div class="container">
 	<div class="row justify-content-center">
@@ -30,7 +30,7 @@ if($acceso["est_per"]=="A")
 
 	 <div class="row bg-primary text-white">
 	 	 <div class="col-12 text-center">
-	  	<h3>Buscar de Cuenta</h3>
+	  	<h3>Buscar del Horario</h3>
 	 	 </div>
 	  </div>
 
@@ -41,14 +41,14 @@ if($acceso["est_per"]=="A")
 		     <label for="">Nombre:</label>
 		</div>
 		<div class="col-md-8 col-12">
-		    <input type="text" name="nom_cue" id="nom_cue" maxlength="50" class="form-control" placeholder="Titular de la Cuenta">
+		    <input type="text" name="nom_hor" id="nom_hor" maxlength="50" class="form-control" placeholder="Nombre del Horario">
 		</div>
 
 	  </div>
 
 	  <div class="row mt-2 bg-light">
 	  	 <div class="col-12  text-center">
-		     <input type="submit" class="btn btn-primary btn-lg" value="Filtrar Cuenta">
+		     <input type="submit" class="btn btn-primary btn-lg" value="Filtrar Horario">
 		</div>
 	   </div>	
 

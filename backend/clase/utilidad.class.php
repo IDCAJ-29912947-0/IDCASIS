@@ -14,6 +14,8 @@ class utilidad
     private $tab_aud;
     private $fky_usuario;
     private $acc_aud;
+    public  $ruta_contenido_backend="../../frontend/material/";
+    public  $ruta_contenido_frontend="../../material/";
 
 
 //=== Función que se ejecuta automáticamente cuando se instancia a utilidad o un hijo de utilidad    
@@ -52,6 +54,7 @@ class utilidad
 
 //=== ejecutar: función para ejecutar una acción en la base de datos.
 	public function ejecutar($sql){
+   // echo $sql;
 		$this->sql=$sql; 
 		return $this->mysqli->query($sql);
 	}// Fin de la función ejecutar()  
@@ -86,6 +89,35 @@ class utilidad
     	$sql="insert into auditoria(tab_aud, fec_aud, acc_aud, prk_aud, fky_usuario,sql_aud)values('$this->tab_aud', '".date('Y-m-d h:i:s')."', '$this->acc_aud', '$prk_aud','$this->fky_usuario','$this->sql');";
     	return $this->ejecutar($sql);
    }//Auditoria
+
+   public function subir_archivo($url_original,$tmp_name,$carpeta,$nombre_final)
+   {
+         $tmp = explode(".",$url_original);
+         $extension = end($tmp);
+         return move_uploaded_file($tmp_name, $carpeta.$nombre_final.".".$extension);
+
+   }
+
+   public function formatear_numero($numero)
+   {
+      return number_format($numero,2,",",".");
+   }
+
+   public function voltear_fecha($fecha)
+   {
+     $fec_aux=explode("-",$fecha);
+     $dia=$fec_aux[2];
+     $mes=$fec_aux[1];
+     $ano=$fec_aux[0];
+     return $dia."/".$mes."/".$ano;
+   }
+
+   public function formato_hora($hora)
+   {
+       return date_format($hora, 'h:i:');
+
+   }
+
 
 
 }//Fin de la Clase

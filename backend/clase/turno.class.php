@@ -10,33 +10,51 @@
 */  
 
 //==============================================================================
-//===	Campos B.D: cod_are, nom_are, est_are
+//===	Campos B.D: cod_tur, nom_tur, ini_tur, fin_tur, mer_tur, est_tur
 require_once("utilidad.class.php");
 
-class area extends utilidad
+class turno extends utilidad
 {
 
-  public $cod_are;
-  public $nom_are; 
-  public $est_are;
+  public $cod_tur;
+  public $nom_tur; 
+  public $est_tur;
 	
 //==============================================================================
    public function agregar(){
 
-    	$sql="insert into area(nom_are,est_are)values('$this->nom_are','$this->est_are');";
+    	$sql="insert into turno(
+            nom_tur,
+            ini_tur, 
+            fin_tur, 
+            mer_tur,
+            est_tur)
+      values(
+            '$this->nom_tur',
+            '$this->ini_tur',
+            '$this->fin_tur',
+            '$this->mer_tur',
+            '$this->est_tur');";
     	return $this->ejecutar($sql);
    }//Fin Agregar
 //==============================================================================
 
    public function modificar(){
-   		$sql="update area set nom_are='$this->nom_are',est_are='$this->est_are' where cod_are='$this->cod_are';";
+   		$sql="update turno
+      set 
+            nom_tur='$this->nom_tur',
+            ini_tur='$this->ini_tur',
+            fin_tur='$this->fin_tur',
+            est_tur='$this->est_tur'
+      where 
+            cod_tur='$this->cod_tur';";
    		return $this->ejecutar($sql);
    	
    }//Fin Modificar  
 //==============================================================================
 
    public function listar(){
-   		$sql="select * from area where est_are='$this->est_are';";
+   		$sql="select * from turno where est_tur='$this->est_tur';";
    		return $this->ejecutar($sql);
    	
    }//Fin Listar 
@@ -55,15 +73,15 @@ class area extends utilidad
    }//Fin Cambio Estatus   
 //==============================================================================
 
-   public function filtrar($cod_are,$nom_are,$est_are){
+   public function filtrar($cod_tur,$nom_tur,$est_tur){
         
         $where="where 1=1";
         
-        $filtro1 = ($cod_are!="") ? "and cod_are=$cod_are":"";
-        $filtro2 = ($nom_are!="") ? "and nom_are like '%$nom_are%'":"";
-        $filtro3 = ($est_are!="") ? "and est_are='$est_are'":"";
+        $filtro1 = ($cod_tur!="") ? "and cod_tur=$cod_tur":"";
+        $filtro2 = ($nom_tur!="") ? "and nom_tur like '%$nom_tur%'":"";
+        $filtro3 = ($est_tur!="") ? "and est_tur='$est_tur'":"";
 
-   		  $sql="select * from area $where $filtro1 $filtro2 $filtro3;";
+   		  $sql="select * from turno $where $filtro1 $filtro2 $filtro3;";
 
    	    return $this->ejecutar($sql);  
 

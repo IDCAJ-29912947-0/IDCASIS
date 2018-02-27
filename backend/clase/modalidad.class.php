@@ -10,6 +10,7 @@ A: Activo
 I: Inactivo  
 */                     
 //==============================================================================
+require_once("utilidad.class.php");
 
 class modalidad extends utilidad
 {
@@ -30,7 +31,7 @@ class modalidad extends utilidad
 //==============================================================================
 
    public function listar(){
-   		$sql="select * from _________ where ;";
+   		$sql="select * from modalidad where est_mod='$this->est_mod';";
    		return $this->ejecutar($sql);
    	
    }//Fin Listar 

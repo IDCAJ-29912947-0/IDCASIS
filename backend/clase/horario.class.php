@@ -1,57 +1,48 @@
 <?php
 //==============================================================================
-//===   iva: Iva asociado al momento de facturar.
+//== Horario: tabla que guarda los horarios de los cursos: Ej: Martes y Jueves
 /*
-cod_iva int 				(Código del IVA)
-val_iva float 				(Valor del IVA: 8%,12%)
-ini_iva date 				(Fecha de Inicio de Vigencia del Iva)
-fin_iva date 				(Fecha de finalización del iva)
-est_iva char 				(Estatus del IVA)
+cod_hor int Código del Horario, Auto Incremental
+nom_hor varchar-50
+Nombre del Horario. Ejemplos:
+                    Lunes, Miércoles, Viernes
+                    Martes y Jueves
+                    Sábados
+                    Domingos
+est_hor char
+Estatus. 
+Valores:
 A: Activo
 I: Inactivo
 */
 //==============================================================================
-//===	Campos B.D: cod_iva, val_iva, ini_iva, fin_iva, est_iva
-
+//===	Campos B.D: cod_hor, nom_hor, est_hor
 require_once("utilidad.class.php");
 
-class iva extends utilidad
+class horario extends utilidad
 {
 
+  public $cod_hor;
+  public $nom_hor; 
+  public $est_hor;
+	
 //==============================================================================
    public function agregar(){
 
-    	$sql="insert into iva(
-               val_iva, 
-               ini_iva, 
-               fin_iva, 
-               est_iva)
-            values(
-               '$this->val_iva', 
-               '$this->ini_iva', 
-               '$this->fin_iva', 
-               '$this->est_iva'
-            );";
+    	$sql="insert into horario(nom_hor,est_hor)values('$this->nom_hor','$this->est_hor');";
     	return $this->ejecutar($sql);
    }//Fin Agregar
 //==============================================================================
 
    public function modificar(){
-   		$sql="update iva 
-         set 
-            val_iva='$this->val_iva', 
-            ini_iva='$this->ini_iva', 
-            fin_iva='$this->fin_iva', 
-            est_iva='$this->est_iva'
-         where 
-            cod_iva=$this->cod_iva;";
+   		$sql="update horario set nom_hor='$this->nom_hor',est_hor='$this->est_hor' where cod_hor='$this->cod_hor';";
    		return $this->ejecutar($sql);
    	
    }//Fin Modificar  
 //==============================================================================
 
    public function listar(){
-   		$sql="select * from iva where est_iva='$this->est_iva' and (curdate()>=ini_iva and curdate()<=fin_iva);";
+   		$sql="select * from horario where est_hor='$this->est_hor';";
    		return $this->ejecutar($sql);
    	
    }//Fin Listar 
@@ -70,14 +61,17 @@ class iva extends utilidad
    }//Fin Cambio Estatus   
 //==============================================================================
 
-   public function filtrar($cod_iva,$est_iva){
-
-        $filtro1 = ($cod_iva!="") ? "and cod_iva=$cod_iva":"";
-        $filtro2 = ($est_iva!="") ? "and est_iva='$est_iva'":"";
-
+   public function filtrar($cod_hor,$nom_hor,$est_hor){
+        
         $where="where 1=1";
-   	  $sql="select * from iva $where  $filtro1 $filtro2;";
- 
+        
+        $filtro1 = ($cod_hor!="") ? "and cod_hor=$cod_hor":"";
+        $filtro2 = ($nom_hor!="") ? "and nom_hor like '%$nom_hor%'":"";
+        $filtro3 = ($est_hor!="") ? "and est_hor='$est_hor'":"";
+
+   		  $sql="select * from horario $where $filtro1 $filtro2 $filtro3;";
+       
+
    	    return $this->ejecutar($sql);  
 
    }// Fin Filtrar

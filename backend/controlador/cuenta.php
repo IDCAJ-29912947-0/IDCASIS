@@ -59,10 +59,10 @@ if($acceso["est_per"]=="A")
 			$res=$obj->modificar();
 			$num_aff=$obj->filas_afectadas();
 			if($num_aff>0){
-				$obj->auditoria($obj->cod_emp);
+				$obj->auditoria($obj->cod_cue);
 				$obj->mensaje("success","Cuenta modificada correctamente");
 			}else{
-				$obj->mensaje("danger","No se modific&oacute; ning&uacute; registro");
+				$obj->mensaje("danger","No se modific&oacute; ning&uacute;n registro");
 			}
 			
 		break;
@@ -71,7 +71,7 @@ if($acceso["est_per"]=="A")
 			  $res=$obj->eliminar();
 			  $num_aff=$obj->filas_afectadas();
 			  if($num_aff>0){
-			  	$obj->auditoria($obj->cod_emp);
+			  	$obj->auditoria($obj->cod_cue);
 			  	$obj->mensaje("success","Cuenta eliminada correctamente");
 			  }else{
 			  	$obj->mensaje("danger","Error al borrar Cuenta.");
@@ -82,7 +82,7 @@ if($acceso["est_per"]=="A")
 			  $res=$obj->cambio_estatus();
 			  $num_aff=$obj->filas_afectadas();
 			  if($num_aff>0){
-			  	$obj->auditoria($obj->cod_emp);
+			  	$obj->auditoria($obj->cod_cue);
 			  	$obj->mensaje("success","Cambio de estatus realizado correctamente");
 			  }else{
 			  	$obj->mensaje("danger","Error al cambiar el estatus de la Cuenta.");

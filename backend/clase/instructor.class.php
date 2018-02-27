@@ -16,26 +16,54 @@ I: Inactivo
 //==============================================================================
 //===	Campos B.D: cod_ins, ide_ins, nom_ins, ape_ins, ema_ins, te1_ins, te2_ins, est_ins
 
+require_once("utilidad.class.php");
+
 class instructor extends utilidad
 {
 
 //==============================================================================
    public function agregar(){
 
-    	$sql="insert into ______()values();";
+    	$sql="insert into instructor(
+            ide_ins, 
+            nom_ins, 
+            ape_ins, 
+            ema_ins, 
+            te1_ins, 
+            te2_ins, 
+            est_ins)
+         values(
+            '$this->ide_ins', 
+            '$this->nom_ins', 
+            '$this->ape_ins', 
+            '$this->ema_ins', 
+            '$this->te1_ins', 
+            '$this->te2_ins', 
+            '$this->est_ins'
+         );";
     	return $this->ejecutar($sql);
    }//Fin Agregar
 //==============================================================================
 
    public function modificar(){
-   		$sql="update _______ set where _______;";
+   		$sql="update instructor 
+         set 
+               ide_ins='$this->ide_ins', 
+               nom_ins='$this->nom_ins', 
+               ape_ins='$this->ape_ins', 
+               ema_ins='$this->ema_ins',
+               te1_ins='$this->te1_ins',
+               te2_ins='$this->te2_ins',
+               est_ins='$this->est_ins'           
+         where 
+               cod_ins=$this->cod_ins;";
    		return $this->ejecutar($sql);
    	
    }//Fin Modificar  
 //==============================================================================
 
    public function listar(){
-   		$sql="select * from _________ where ;";
+   		$sql="select * from instructor where est_ins='$this->est_ins';";
    		return $this->ejecutar($sql);
    	
    }//Fin Listar 
@@ -54,10 +82,15 @@ class instructor extends utilidad
    }//Fin Cambio Estatus   
 //==============================================================================
 
-   public function filtrar(){
+   public function filtrar($cod_ins,$dat_ins,$est_ins){
 
-   		$sql="select * from __________ where ;";
-   	    return $this->ejecutar($sql);  
+        $where="where 1=1";
+        $filtro1 = ($cod_ins!="") ? "and cod_ins=$cod_ins":"";
+        $filtro2 = ($dat_ins!="") ? "and nom_ins like '%$dat_ins%' or ape_ins like '%$dat_ins%'":"";
+        $filtro3 = ($est_ins!="") ? "and est_ins='$est_ins'":"";
+
+   	  $sql="select * from instructor $where $filtro1 $filtro2 $filtro3;";
+   	  return $this->ejecutar($sql);  
 
    }// Fin Filtrar
 //==============================================================================
