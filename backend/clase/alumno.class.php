@@ -13,13 +13,14 @@ te2_alu varchar-15 		(Telefono 2 del alumno)
 ins_alu varchar-20 		(Instagram del Alumno)
 fky_pais pais(cod_pai) 	(Apunta a la tabla Pais)
 fky_universidad universidad(cod_uni) (Apunta a la tabla Universidad)
+fky_carrera   int        (Carrera Universitaria)
 est_alu char 			(Estatus de los alumnos)
 1) Activo. Valor: A
 2) Suspendido. Valor: S, el motivo se debe a no cumplir con las políticas de la empresa.
 3) Inactivo: Valor: I, el alumno se fué del pais, no quiere recibir correos.
 */                       
 //==============================================================================
-//===	Campos B.D: cod_alu, ide_alu, nom_alu, ape_alu, sex_alu, ema_alu, te1_alu, te2_alu, ins_alu, fky_pais,fky_universidad, est_alu 
+//===	Campos B.D: cod_alu, ide_alu, nom_alu, ape_alu, sex_alu, ema_alu, te1_alu, te2_alu, ins_alu, fky_pais,fky_universidad, fky_carrera, est_alu 
 require_once("utilidad.class.php");
 class alumno extends utilidad
 {
@@ -34,6 +35,7 @@ class alumno extends utilidad
 	public $ins_alu; 
 	public $fky_pais;
 	public $fky_universidad;
+  public $fky_carrera;
 	public $est_alu; 
 
 //==============================================================================
@@ -50,6 +52,7 @@ class alumno extends utilidad
             ins_alu, 
             fky_pais,
             fky_universidad,
+            fky_carrera,
             est_alu)
     	   values
     	     ('$this->ide_alu', 
@@ -61,8 +64,10 @@ class alumno extends utilidad
             '$this->te2_alu', 
             '$this->ins_alu', 
              $this->fky_pais,
-             $this->fky_universidad, 
+             $this->fky_universidad,
+             $this->fky_carrera,
             '$this->est_alu');";
+            echo $sql;
     	return $this->ejecutar($sql);
     	
    }//Fin Agregar
@@ -80,6 +85,7 @@ class alumno extends utilidad
       ins_alu='$this->ins_alu', 
       fky_pais=$this->fky_pais,
       fky_universidad=$this->fky_universidad, 
+      fky_carrera=$this->fky_carrera,
       est_alu='$this->est_alu' 
       where 
       cod_alu=$this->cod_alu;";

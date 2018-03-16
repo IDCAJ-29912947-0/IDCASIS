@@ -12,26 +12,40 @@ I: Inactivo
 //==============================================================================
 //===	Campos B.D: cod_tip_pag, nom_tip_pag, est_tip_pag
 
+
+require_once("utilidad.class.php");
+
 class tipo_pago extends utilidad
 {
 
 //==============================================================================
    public function agregar(){
 
-    	$sql="insert into ______()values();";
+    	$sql="insert into tipo_pago(
+            nom_tip_pag,
+            est_tip_pag)
+            values(
+            '$this->nom_tip_pag',
+            '$this->est_tip_pag'
+            );";
     	return $this->ejecutar($sql);
    }//Fin Agregar
 //==============================================================================
 
    public function modificar(){
-   		$sql="update _______ set where _______;";
+   		$sql="update tipo_pago 
+               set 
+               nom_tip_pag='$this->nom_tip_pag',
+               est_tip_pag='$this->est_tip_pag'
+               where 
+               cod_tip_pag=$this->cod_tip_pag;";
    		return $this->ejecutar($sql);
    	
    }//Fin Modificar  
 //==============================================================================
 
    public function listar(){
-   		$sql="select * from _________ where ;";
+   		$sql="select * from tipo_pago where est_tip_pag='$this->est_tip_pag';";
    		return $this->ejecutar($sql);
    	
    }//Fin Listar 
@@ -50,10 +64,17 @@ class tipo_pago extends utilidad
    }//Fin Cambio Estatus   
 //==============================================================================
 
-   public function filtrar(){
+   public function filtrar($cod_tip_pag,$nom_tip_pag,$est_tip_pag){
+        
+        $where="where 1=1";
+        
+        $filtro1 = ($cod_tip_pag!="") ? "and cod_tip_pag=$cod_tip_pag":"";
+        $filtro2 = ($nom_tip_pag!="") ? "and nom_tip_pag like '%$nom_tip_pag%'":"";
+        $filtro3 = ($est_tip_pag!="") ? "and est_tip_pag='$est_tip_pag'":"";
 
-   		$sql="select * from __________ where ;";
-   	    return $this->ejecutar($sql);  
+        $sql="select * from tipo_pago $where $filtro1 $filtro2 $filtro3;";
+
+        return $this->ejecutar($sql);  
 
    }// Fin Filtrar
 //==============================================================================

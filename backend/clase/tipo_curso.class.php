@@ -6,6 +6,7 @@ cod_tip_cur int 							(Código del Tipo de Curso. Autoincremental)
 nom_tip_cur varchar-50 						(Nombre del tipo de curso)
 hor_tip_cur int 							(Numero de Horas Académicas)
 cer_tip_cur varchar-50 						(Nombre que aparecerá en el certificado)
+des_tip_cur text              (Descripción del tipo de curso, aclara al alumno de qué se trata el curso)
 obj_tip_cur varchar-255 					(Objetivo del Curso)
 min_tip_cur int 							(Número mínimo de cupos)
 max_tip_cur int 							(Numero maximo de cupos)
@@ -35,6 +36,7 @@ class tipo_curso extends utilidad
       nom_tip_cur, 
       hor_tip_cur, 
       cer_tip_cur, 
+      des_tip_cur,      
       obj_tip_cur, 
       min_tip_cur, 
       max_tip_cur, 
@@ -47,6 +49,7 @@ class tipo_curso extends utilidad
       '$this->nom_tip_cur', 
        $this->hor_tip_cur, 
       '$this->cer_tip_cur', 
+      '$this->des_tip_cur',      
       '$this->obj_tip_cur', 
        $this->min_tip_cur, 
        $this->max_tip_cur, 
@@ -55,6 +58,7 @@ class tipo_curso extends utilidad
        $this->fky_area, 
        $this->fky_empresa, 
       '$this->est_tip_cur');";
+      echo $sql;
     	return $this->ejecutar($sql);
    }//Fin Agregar
 //==============================================================================
@@ -69,6 +73,7 @@ class tipo_curso extends utilidad
                min_tip_cur=$this->min_tip_cur, 
                max_tip_cur= $this->max_tip_cur, 
                max_tip_cur='$this->max_tip_cur', 
+               des_tip_cur='$this->des_tip_cur', 
                fky_area=$this->fky_area, 
                fky_empresa=$this->fky_empresa, 
                est_tip_cur='$this->est_tip_cur'
@@ -88,6 +93,7 @@ class tipo_curso extends utilidad
                   t.fky_area=a.cod_are and
                   t.fky_empresa=e.cod_emp and 
                   t.est_tip_cur='$this->est_tip_cur';";
+                
    		return $this->ejecutar($sql);
    	
    }//Fin Listar 

@@ -1,9 +1,11 @@
 <?php
 require("../../../backend/clase/requisito.class.php");
 require("../../../backend/clase/permiso.class.php");
+require("../../../backend/clase/tipo_requisito.class.php");
 
 $obj=new requisito;
 $objPermiso=new permiso;
+$objTipoRequisito=new tipo_requisito;
 
 $permiso=$objPermiso->validar_acceso($opcion=5,$fky_usuario=1,$token=md5("12345"));
 $acceso=$objPermiso->extraer_dato($permiso);
@@ -44,7 +46,7 @@ $datos=$obj->extraer_dato($resultado);
 
 	  <div class="row mt-2">
 
-		<div class="col-md-2 col-12 align-self-center">
+		<div class="col-md-3 col-12 align-self-center text-left">
 		     <label for="">Código:</label>
 		</div>
 		<div class="col-md-4 col-12">
@@ -53,19 +55,43 @@ $datos=$obj->extraer_dato($resultado);
 
 	  </div> 
 
-	  <div class="row mt-2 bg-light">
+	  <div class="row mt-3 bg-light">
 
-		<div class="col-md-2 col-12 align-self-center">
+		<div class="col-md-3 col-12 align-self-center text-left">
 		     <label for="">Nombre:</label>
 		</div>
-		<div class="col-md-10 col-12">
+		<div class="col-md-9 col-12">
 		    <input type="text"  class="form-control" value="<?php echo $datos['nom_req']; ?>" size="35" readonly >
 		</div>
 
 	  </div>
+ 
+ 	  <div class="row mt-2 bg-light">
+
+		<div class="col-md-3 col-12 align-self-center text-left">
+		     <label for="">Tipo de Requisito:</label>
+		</div>
+		<div class="col-md-9 col-12 ">
+			<fieldset disabled>
+				<select name="fky_tipo_requisito" id="fky_tipo_requisito" class="form-control">
+					<option value="X">Seleccione...</option>
+					<?php
+					$objTipoRequisito->asignar_valor("est_tip_req","A");
+					$pun_tr=$objTipoRequisito->listar();
+					while(($tipo_requisito=$objTipoRequisito->extraer_dato($pun_tr))>0)
+					{
+						$selected=($tipo_requisito['cod_tip_req']==$datos['fky_tipo_requisito'])?"selected":"";
+						echo "<option value='$tipo_requisito[cod_tip_req]' $selected>$tipo_requisito[nom_tip_req]</option>";
+					}	
+					?>
+			   </select>
+			</fieldset>
+		</div>
+
+	  </div> 
 
 	  <div class="row mt-2">
-	     <div class="col-md-2 col-12 align-self-center">
+	     <div class="col-md-3 col-12 align-self-center text-left">
 		     <label for="">Estatus:</label>
 		</div>
 	  <div class="col-md-4 col-12">

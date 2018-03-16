@@ -5,29 +5,37 @@
 cod_req_cur int 				 		(Código del requisito). 
 fky_requisito requisito(cod_req) 		(Requisito del Curso).
 fky_tipo_curso tipo_curso(cod_tip_cur)  (Tipo de Curso: Photoshop, Autocad, Community Manager, etc)
-ini_req varchar-15						(valor inicial para cumplir con el requisito.)
-fin_req: 								(valor fin para cumplir con el requisito)
 obl_req char 							(Indica si el requisito es obligatorio).
 										Valores:
 										O: Obligatorio
 										N: Opcional
-est_req char 							Estatus del requisito.
-Valores del Estatus:
-A: Activo
-I: Inactivo   
 */                      
 //==============================================================================
 //===	Campos B.D:  cod_req_cur, fky_requisito, fky_tipo_curso, ini_req, fin_req obl_req, est_req
+
+require_once("utilidad.class.php");
 
 class requisito_por_curso extends utilidad
 {
 
 //==============================================================================
-   public function agregar(){
+   public function agregar()
+   {
+      $sql="insert into requisito_por_curso(
+            fky_requisito,
+            fky_tipo_curso,
+            obl_req,
+            obs_req
+          ) values(
+             $this->fky_requisito,
+             $this->fky_tipo_curso,
+            '$this->obl_req',
+            '$this->obs_req'
+          )";
+          echo $sql;
+      return $this->ejecutar($sql);
+   }
 
-    	$sql="insert into ______()values();";
-    	return $this->ejecutar($sql);
-   }//Fin Agregar
 //==============================================================================
 
    public function modificar(){
@@ -45,7 +53,8 @@ class requisito_por_curso extends utilidad
 //==============================================================================
 
    public function eliminar(){
-   		$sql="delete from ______ where ;";
+   		$sql="delete from requisito_por_curso where fky_tipo_curso=$this->fky_tipo_curso;";
+      echo "<br> $sql";
    		return $this->ejecutar($sql);  	
    }//Fin Eliminar  
 //==============================================================================
@@ -57,9 +66,18 @@ class requisito_por_curso extends utilidad
    }//Fin Cambio Estatus   
 //==============================================================================
 
-   public function filtrar(){
+   public function filtrar($fky_requisito,$fky_tipo_curso){
 
-   		$sql="select * from __________ where ;";
+        $filtro1=($fky_requisito!="")?" and fky_requisito=$fky_requisito":""; 
+        $filtro2=($fky_tipo_curso!="")?" and fky_tipo_curso=$fky_tipo_curso":""; 
+
+   		$sql="select rc.*,r.nom_req,tc.nom_tip_cur 
+               from 
+               requisito_por_curso rc, requisito r,tipo_curso tc 
+               where rc.fky_requisito=r.cod_req and
+                     rc.fky_tipo_curso=tc.cod_tip_cur $filtro1 $filtro2;";
+      echo "$sql";              
+
    	    return $this->ejecutar($sql);  
 
    }// Fin Filtrar

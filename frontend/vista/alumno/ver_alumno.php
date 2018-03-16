@@ -1,12 +1,14 @@
 <?php
 require("../../../backend/clase/alumno.class.php");
 require("../../../backend/clase/permiso.class.php");
+require("../../../backend/clase/carrera.class.php");
 require("../../../backend/clase/universidad.class.php");
 require("../../../backend/clase/pais.class.php");
 
 $objPais=new pais;
 $obj=new alumno;
 $objPermiso=new permiso;
+$objCarrera=new carrera;
 $objUniversidad=new universidad;
 
 $permiso=$objPermiso->validar_acceso($opcion=5,$fky_usuario=1,$token=md5("12345"));
@@ -167,6 +169,29 @@ $objUniversidad->asignar_valor("est_uni","A");
 		   ?>
 		   </select>
 		 </fieldset>
+		</div>
+
+	  </div>
+
+	  <div class="row mt-2">
+	  <div class="col-md-2 col-12 align-self-center">
+		     <label for="">Carrera:</label>
+		</div>
+		<div class="col-md-6 col-12">
+			<fieldset disabled>
+				<select name="fky_carrera" id="fky_carrera" class="form-control">
+					<option>Seleccione...</option>
+					<?php
+					$objCarrera->est_car="A";		   
+					$datoCar=$objCarrera->listar();
+					while(($carrera=$objCarrera->extraer_dato($datoCar))>0)
+					{
+							$selected=($carrera["cod_car"]==$datos["fky_carrera"])?"selected":"";
+							echo "<option value='$carrera[cod_car]' $selected>$carrera[nom_car]</option>";
+					}
+					?>
+				</select>
+			</fieldset>
 		</div>
 
 	  </div>

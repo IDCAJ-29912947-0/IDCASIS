@@ -98,7 +98,7 @@ class curso extends utilidad
                      fk2_turno=$this->fk2_turno,
                      fky_horario=$this->fky_horario, 
                      fky_tipo_curso=$this->fky_tipo_curso, 
-                     fky_instructor=$this->fky_instructor', 
+                     fky_instructor=$this->fky_instructor, 
                      fky_modalidad=$this->fky_modalidad, 
                      est_cur='$this->est_cur'               
                where 
@@ -119,6 +119,8 @@ class curso extends utilidad
                      c.fky_instructor=i.cod_ins and
                      c.fky_modalidad=m.cod_mod and
                      c.est_cur='$this->est_cur';";
+
+                    
    		return $this->ejecutar($sql);
    	
    }//Fin Listar 

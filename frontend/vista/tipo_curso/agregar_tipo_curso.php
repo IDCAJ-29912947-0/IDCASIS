@@ -67,6 +67,16 @@ if($acceso["est_per"]=="A")
 			</div>
 	  </div>	
 
+
+	  <div class="row mt-2 bg-light align-items-center">
+			<div class="col-md-3 col-12 text-left">
+		     	<label for="">¿De qué se trata este curso?:</label>
+			</div>
+			<div class="col-md-7 col-12">	   
+		  		  <textarea name="des_tip_cur" id="des_tip_cur" cols="30" rows="5" required="required" class="form-control"></textarea>
+			</div>
+	  </div>
+
 	  <div class="row mt-2 bg-light align-items-center">
 			<div class="col-md-3 col-12 text-left">
 		     	<label for="">Objetivo del Curso:</label>

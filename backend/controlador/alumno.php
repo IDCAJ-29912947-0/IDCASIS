@@ -13,6 +13,7 @@ te2_alu varchar-15 		(Telefono 2 del alumno)
 ins_alu varchar-20 		(Instagram del Alumno)
 fky_pais pais(cod_pai) 	(Apunta a la tabla Pais)
 fky_universidad universidad(cod_uni) (Apunta a la tabla Universidad)
+not_alu                 (Notificaciones al correo)
 est_alu char 			(Estatus de los alumnos)
 1) Activo. Valor: A
 2) Suspendido. Valor: S, el motivo se debe a no cumplir con las políticas de la empresa.

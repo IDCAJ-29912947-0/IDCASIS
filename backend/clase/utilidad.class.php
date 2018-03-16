@@ -54,7 +54,7 @@ class utilidad
 
 //=== ejecutar: función para ejecutar una acción en la base de datos.
 	public function ejecutar($sql){
-   // echo $sql;
+    //echo $sql;
 		$this->sql=$sql; 
 		return $this->mysqli->query($sql);
 	}// Fin de la función ejecutar()  
@@ -70,7 +70,7 @@ class utilidad
 
 		echo "<link  rel='stylesheet' href='../../frontend/bootstrap-4.0/css/bootstrap.min.css'>";
 		echo "<div class='alert alert-$color mt-3'>
-					<strong>$mensaje.</strong> <a href='javascript:window.history.back();' class='alert-link'>Volver?</a>
+					<strong>$mensaje</strong> 
 			  </div>";
 	}
 
@@ -100,7 +100,7 @@ class utilidad
 
    public function formatear_numero($numero)
    {
-      return number_format($numero,2,",",".");
+      return number_format($numero,0,",",".");
    }
 
    public function voltear_fecha($fecha)
@@ -117,6 +117,20 @@ class utilidad
        return date_format($hora, 'h:i:');
 
    }
+
+   function voltear_timestamp($fecha)
+   {
+     $aux=explode(" ",$fecha);
+     $fec=$this->voltear_fecha($aux[0]);
+     //$hor=$this->formato_hora($aux[1]);
+     return $fec;
+   }
+
+   function formatear_hora($hora)
+   {
+     return substr($hora,0,5);
+   } 
+
 
 
 

@@ -11,7 +11,7 @@ I: Inactivo.
 */                        
 //==============================================================================
 //===	Campos B.D: cod_pai, nom_pai, est_pai
-
+require("utilidad.class.php");
 class pais extends utilidad
 {
 

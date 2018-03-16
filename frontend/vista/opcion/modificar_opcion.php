@@ -18,7 +18,7 @@ foreach($_REQUEST as $nombre_campo => $valor){
   	$obj->asignar_valor($nombre_campo,$valor);
 } 
 
-$resultado=$obj->filtrar($obj->cod_opc,$nom_opc="",$est_opc="");
+$resultado=$obj->filtrar($obj->cod_opc,$nom_opc="",$est_opc="",$fky_modulo="");
 $datos=$obj->extraer_dato($resultado);
 
 ?>

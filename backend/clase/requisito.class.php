@@ -4,6 +4,7 @@
 /*
 cod_req int 		(Código del requisito).
 nom_req varchar-80 	(Nombre del requisito).
+fky_tipo_requisito  (Tipo de Requisito)
 est_req char
 Estatus del Requisito:
 A: Activo
@@ -16,6 +17,7 @@ class requisito extends utilidad
 {
     public $cod_req;
     public $nom_req;
+    public $fky_tipo_requisito;   
     public $est_req;
 
 //==============================================================================
@@ -23,10 +25,13 @@ class requisito extends utilidad
 
     	$sql="insert into requisito(
             nom_req,
+            fky_tipo_requisito,
             est_req)
             values(
-            '$this->nom_req', 
+            '$this->nom_req',
+             $this->fky_tipo_requisito,            
             '$this->est_req');";
+            echo $sql;
     	return $this->ejecutar($sql);
    }//Fin Agregar
 //==============================================================================
@@ -35,16 +40,19 @@ class requisito extends utilidad
    		$sql="update requisito 
                set 
                nom_req='$this->nom_req',
+               fky_tipo_requisito=$this->fky_tipo_requisito,
                est_req='$this->est_req' 
                where
                cod_req='$this->cod_req';";
+
+             
    		return $this->ejecutar($sql);
    	
    }//Fin Modificar  
 //==============================================================================
 
    public function listar(){
-   		$sql="select * from requisito where est_req='$this->est_req';";
+   		$sql="select r.*,tr.nom_tip_req from requisito r,tipo_requisito tr where r.fky_tipo_requisito=tr.cod_tip_req and est_req='$this->est_req';";
    		return $this->ejecutar($sql);
    	
    }//Fin Listar 
@@ -64,19 +72,22 @@ class requisito extends utilidad
 //==============================================================================
 
    public function filtrar($cod_req,$nom_req,$est_req){
-
-        $where="where 1=1";
-        
+      
         $filtro1 = ($cod_req!="") ? "and cod_req=$cod_req":"";
         $filtro2 = ($nom_req!="") ? "and nom_req like '%$nom_req%'":"";
         $filtro3 = ($est_req!="") ? "and est_req='$est_req'":"";
 
-        $sql="select * from requisito $where $filtro1 $filtro2 $filtro3;";
+        $sql="select r.*,tr.nom_tip_req 
+              from 
+              requisito r,tipo_requisito tr 
+              where 
+              r.fky_tipo_requisito=tr.cod_tip_req 
+              $filtro1 $filtro2 $filtro3;";
 
         return $this->ejecutar($sql); 
 
    }// Fin Filtrar
-//==============================================================================
+//==============================================================================         
 
 }//Fin de la Clase
 ?>

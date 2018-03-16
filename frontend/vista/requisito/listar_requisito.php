@@ -36,7 +36,7 @@ if($acceso["est_per"]=="A")
 	<div class="container-fluid">
 
 	<div class="row justify-content-center">
-	<div class="col-10 text-center ">
+	<div class="col-11 text-center ">
 
 
 	 <div class="row bg-primary text-white">
@@ -48,16 +48,17 @@ if($acceso["est_per"]=="A")
 	  <div class="row mt-1 bg-primary text-white text-center">
 
 	  	<div class="col-md-2 col-12 border border-white">
-		  <i class="fas fa-eye"></i> 
-		  <i class="fas fa-edit"></i>  
+		  <i class="fas fa-eye">Ver</i> 
+		  <i class="fas fa-edit">Editar</i>  
 		  
 		</div>
 
-		<div class="col-md-2 col-12  border border-white">
-		     <span>Código</span>
+
+		<div class="col-md-4 col-12 border border-white ">
+		     <span>Tipo Requisito</span>
 		</div>
 
-		<div class="col-md-6 col-12 border border-white ">
+		<div class="col-md-4 col-12 border border-white ">
 		     <span>Nombre del Requisito</span>
 		</div>
 
@@ -78,18 +79,18 @@ if($acceso["est_per"]=="A")
 
 		<div class="col-md-2 col-12 border border-white text-center">
 		  <a href="<?php echo "ver_requisito.php?cod_req=$datos[cod_req]"?>">
-		 	 <i class="fas fa-eye"></i>
+		 	 <i class="fas fa-eye">Ver</i>
 		  </a> 
 		  <a href="<?php echo "modificar_requisito.php?cod_req=$datos[cod_req]"?>">
-		 	 <i class="fas fa-edit"></i>
+		 	 <i class="fas fa-edit">Editar</i>
 		  </a>  
 		</div>
 
-		<div class="col-md-2 col-12 border border-white">
-		     <span><?php echo $datos['cod_req']; ?></span>
+		<div class="col-md-4 col-12 border border-white text-left">
+		     <span><?php echo $datos['nom_tip_req']; ?></span>
 		</div>
 
-		<div class="col-md-6 col-12 border border-white text-left">
+		<div class="col-md-4 col-12 border border-white text-left">
 		     <span><?php echo $datos['nom_req']; ?></span>
 		</div>
 
