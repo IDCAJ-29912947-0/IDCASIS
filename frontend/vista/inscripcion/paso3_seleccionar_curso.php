@@ -77,18 +77,27 @@ foreach($_REQUEST as $nombre_campo => $valor){
 		</div>
 		
 		<div class="col-md-8 col-12">
-		   <select name="fky_tipo_curso" id="fky_tipo_curso" class="form-control" onchange="buscar_requisitos_curso()">
+		   <select name="fky_curso" id="fky_curso" class="form-control" onchange="buscar_requisitos_curso()">
 		   <option>Seleccione...</option>
 		   <?php
 		   $obj->est_cur="A";
 		   $cur=$obj->listar();
 		   while(($curso=$obj->extraer_dato($cur))>0)
 		   {	
-		   		echo "<option value='$curso[cod_tip_cur]'>$curso[nom_tip_cur] / Inicio: ".$obj->voltear_fecha($curso['ini_cur'])." </option>";
+		   		echo "<option value='$curso[cod_cur]'>$curso[nom_tip_cur] / Inicio: ".$obj->voltear_fecha($curso['ini_cur'])." </option>";
 		   }
 		   ?>
 		   </select>
 		</div>
+
+
+	  <div class="col-md-12 col-12 mt-3 d-none" id="zona_barra">
+	  	Cargando requisitos...
+		  <div class="progress mb-3">
+
+			  <div class="progress-bar progress-bar-striped progress-bar-animated bg-dark" role="progressbar" style="width: 10%; height: 20px; line-height: 50px;" id="barra"><span id="porcentaje"></span></div>
+		  </div>
+	  </div>
 
       <div class="col-md-12 col-12 mt-3" id="requisitos">
       	
@@ -99,7 +108,7 @@ foreach($_REQUEST as $nombre_campo => $valor){
   
 		<div class="row mt-2 bg-light">
 			 <div class="col-12  text-center">
-				   <input type="submit" class="btn btn-primary btn-md" value="Continuar">
+				   <input type="submit" class="btn btn-primary btn-md" value="Continuar" disabled id="boton">
 			</div>
 		</div>	  	  
     </div>
@@ -108,4 +117,7 @@ foreach($_REQUEST as $nombre_campo => $valor){
 <input type="hidden" name="fky_alumno" id="fky_alumno" value="<?php echo $cod_alu;?>">			
 </form>	
 </body>
+	<script src="../../bootstrap-4.0/js/jquery-3.2.1.min.js"></script>
+	<script src="../../bootstrap-4.0/js/popper-1.12.6.min.js"></script>
+	<script src="../../bootstrap-4.0/js/bootstrap.min.js"></script>
 </html>

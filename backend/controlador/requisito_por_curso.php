@@ -14,9 +14,11 @@ obl_req char 							(Indica si el requisito es obligatorio).
 //===	Campos B.D:  cod_req_cur, fky_requisito, fky_tipo_curso, ini_req, fin_req obl_req, est_req
 
 require("../clase/permiso.class.php");
+require("../clase/tipo_curso.class.php");
 require("../clase/requisito_por_curso.class.php");
 
 $objPermiso=new permiso;
+$objTipoCurso=new tipo_curso;
 $obj=new requisito_por_curso;
 
 $permiso=$objPermiso->validar_acceso($opcion=6,$fky_usuario=1,$token=md5("12345"));
@@ -71,19 +73,24 @@ if($acceso["est_per"]=="A")
 		break;
 
 		case 'filtrar':
-			  $req=$obj->filtrar($fky_requisito="",$_GET["fky_tipo_curso"]);
-			  $i=0;
+			  $req=$obj->filtrar($fky_requisito="",$_GET["fky_curso"]);
+			  $i=1;
 			  $req_cur="";
-			  $req_cur.="<div class='jumbotron mt-3'>";
-			  $req_cur.="<h3 class='display-3 mb-3'>Titulo</h3>";
-			  $req_cur.="<p class='lead mb-4'>Subtitulo</p>";
+			  $obl_req="";
+			  $obs_req="";
+
+			  $req_cur.="<div class='jumbotron'>";
+			  $req_cur.="<p class='lead alert alert-success'>El alumno debe cumplir con los siguientes <strong>requisitos</strong> para hacer el curso:</p>";
 			  while(($datos=$obj->extraer_dato($req))>0)
 			  {
-			  	$req_cur.=$req_cur.="<p>$datos['nom_req']</p>";
+			  	$obl_req=($datos['obl_req']=="O")?"<span class='badge badge-danger'>(Obligatorio)</span>":"<span class='badge badge-info'>(Opcional)</span>";
+			  	$obs_req=($datos['obs_req']!="")?"($datos[obs_req])":"";
+
+			  	$req_cur.="<p class='text-left'>$i) $datos[nom_req]. $obl_req $obs_req</p>";
 			    $i++;
 			  }
 			  $req_cur.="</div>";
-			  echo ($i==0)?"<div class='alert alert-success'>¡Para poder hacer el curso no es necesario ningún requisito!</div>":"$req_cur";
+			  echo ($i==1)?"<div class='alert alert-success'>¡Para poder hacer el curso no es necesario ningún requisito!</div>":"$req_cur";
 		break;
 
 	}

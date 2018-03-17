@@ -7,7 +7,7 @@ $objTurno=new turno;
 	foreach($_REQUEST as $nombre_campo => $valor){
 	  	$obj->asignar_valor($nombre_campo,$valor);
 	} 
-
+echo "el curso es: ".$obj->fky_curso;
 		$resultado=$obj->filtrar($obj->fky_curso,"","","","","","");
 		$datos=$obj->extraer_dato($resultado);
 
@@ -156,7 +156,7 @@ $objTurno=new turno;
 	  </div>
 	</div> <!-- Fin Container -->
 	<input type="hidden" name="accion" id="accion" value="agregar">			
-	<input type="hidden" name="fky_curso" id="fky_curso" value="<?php echo $_POST['fky_curso'];?>">			
+	<input type="hidden" name="fky_curso" id="fky_curso" value="<?php echo $obj->fky_curso;?>">			
 	<input type="hidden" name="fky_alumno" id="fky_alumno" value="<?php echo $_POST['fky_alumno'];?>">	
 </form>	
 </body>

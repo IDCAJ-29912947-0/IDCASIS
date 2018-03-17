@@ -76,7 +76,7 @@ class requisito_por_curso extends utilidad
                requisito_por_curso rc, requisito r,tipo_curso tc 
                where rc.fky_requisito=r.cod_req and
                      rc.fky_tipo_curso=tc.cod_tip_cur $filtro1 $filtro2;";
-      echo "$sql";              
+                   
 
    	    return $this->ejecutar($sql);  
 

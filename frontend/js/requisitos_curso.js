@@ -1,20 +1,29 @@
 function buscar_requisitos_curso()
 {
-    var sel_idx=document.getElementById("fky_tipo_curso").selectedIndex
+    var sel_idx=document.getElementById("fky_curso").selectedIndex
     if(sel_idx>0)
     {	
 
-	var fky_tipo_curso=document.getElementById("fky_tipo_curso").value
+	var fky_curso=document.getElementById("fky_curso").value
 	var objAjax=new XMLHttpRequest()
-	objAjax.open("GET","../../../backend/controlador/requisito_por_curso.php?accion=filtrar&fky_tipo_curso="+fky_tipo_curso)
+  document.getElementById("zona_barra").className =document.getElementById("zona_barra").className.replace( /(?:^|\s)d-none(?!\S)/g , ' d-block' )
+
+	objAjax.open("GET","../../../backend/controlador/requisito_por_curso.php?accion=filtrar&fky_curso="+fky_curso)
 	objAjax.onreadystatechange=function(){
-      alert(objAjax.status)
-      alert(objAjax.readyState)
+
+
+
        if(objAjax.status==200 && objAjax.readyState==4)
        	{
-       		alert(objAjax.responseText)
+       		
        		document.getElementById("requisitos").innerHTML=objAjax.responseText
-       	}
+          document.getElementById("zona_barra").className =document.getElementById("zona_barra").className.replace( /(?:^|\s)d-block(?!\S)/g , ' d-none' )
+          document.getElementById("boton").disabled=false
+       	}else
+          {
+          document.getElementById("barra").style.width=25*objAjax.readyState+"%"
+          document.getElementById("porcentaje").innerHTML=document.getElementById("barra").style.width        
+          }
 
 	}
 	objAjax.send(null)

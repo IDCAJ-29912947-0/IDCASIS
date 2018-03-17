@@ -2,7 +2,7 @@
 
 <project version="2">
 	<attribs>
-		<attrib name="build">179</attrib>
+		<attrib name="build">182</attrib>
 		<attrib name="serial">147881</attrib>
 	</attribs>
 	<database>
@@ -168,29 +168,29 @@
 				<pdf>
 					<pageSize>1</pageSize>
 					<output>D:\Ingenieria Digital\Nueva Página Ingenieria Digital\Documentacion y Levantamiento de Informacion\documentacion_base_datos.pdf</output>
-					<thumbnails>128</thumbnails>
 					<language>es</language>
+					<thumbnails>128</thumbnails>
 				</pdf>
 			</DocsGenModule>
-			<SummaryGenModule>
-				<html>
-					<output>D:\Ingenieria Digital\Nueva Página Ingenieria Digital\Documentacion y Levantamiento de Informacion\sumario.html</output>
-				</html>
-			</SummaryGenModule>
+			<CodeGenModule>
+				<php>
+					<output>D:\Ingenieria Digital\Nueva Página Ingenieria Digital\Documentacion y Levantamiento de Informacion\codigo.php</output>
+					<extends>utilidad</extends>
+					<genConsts>N</genConsts>
+					<genNames>N</genNames>
+				</php>
+			</CodeGenModule>
 			<SqlGenModule>
 				<mysql>
 					<output>D:\wamp\www\sistema\Documentacion y Levantamiento de Informacion\script.sql</output>
 					<genRules>Y</genRules>
 				</mysql>
 			</SqlGenModule>
-			<CodeGenModule>
-				<php>
-					<output>D:\Ingenieria Digital\Nueva Página Ingenieria Digital\Documentacion y Levantamiento de Informacion\codigo.php</output>
-					<genConsts>N</genConsts>
-					<extends>utilidad</extends>
-					<genNames>N</genNames>
-				</php>
-			</CodeGenModule>
+			<SummaryGenModule>
+				<html>
+					<output>D:\Ingenieria Digital\Nueva Página Ingenieria Digital\Documentacion y Levantamiento de Informacion\sumario.html</output>
+				</html>
+			</SummaryGenModule>
 		</modsConfig>
 		<modsUsage>
 			<module name="SummaryGenModule.html"/>
@@ -7034,7 +7034,7 @@
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
-							<attrib name="16">false</attrib>
+							<attrib name="16">true</attrib>
 							<attrib name="15">false</attrib>
 							<attrib name="339"/>
 							<attrib name="338">false</attrib>
@@ -7067,7 +7067,7 @@
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
-							<attrib name="16">false</attrib>
+							<attrib name="16">true</attrib>
 							<attrib name="15">false</attrib>
 							<attrib name="339"/>
 							<attrib name="338">false</attrib>
