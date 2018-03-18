@@ -108,7 +108,7 @@ foreach($_REQUEST as $nombre_campo => $valor){
   
 		<div class="row mt-2 bg-light">
 			 <div class="col-12  text-center">
-				   <input type="submit" class="btn btn-primary btn-md" value="Continuar" disabled id="boton">
+				   <input type="submit" class="btn btn-primary btn-md" value="Sí, cumplo los requisitos" disabled id="boton">
 			</div>
 		</div>	  	  
     </div>

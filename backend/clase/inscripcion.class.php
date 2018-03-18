@@ -31,7 +31,8 @@ class inscripcion extends utilidad
                  hor_ins, 
                  fky_alumno, 
                  fky_curso,
-                 fky_factura, 
+                 fky_factura,
+                 fky_medio_publicidad,
                  est_ins)
             values(
                  '$this->fec_ins', 
@@ -39,6 +40,7 @@ class inscripcion extends utilidad
                   $this->fky_alumno, 
                   $this->fky_curso,
                   $this->fky_factura, 
+                  $this->fky_medio_publicidad,                  
                  '$this->est_ins');";
 
     	return $this->ejecutar($sql);

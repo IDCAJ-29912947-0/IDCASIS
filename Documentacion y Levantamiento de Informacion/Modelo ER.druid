@@ -2,8 +2,8 @@
 
 <project version="2">
 	<attribs>
-		<attrib name="build">182</attrib>
-		<attrib name="serial">147881</attrib>
+		<attrib name="build">194</attrib>
+		<attrib name="serial">152149</attrib>
 	</attribs>
 	<database>
 		<attribs>
@@ -168,29 +168,29 @@
 				<pdf>
 					<pageSize>1</pageSize>
 					<output>D:\Ingenieria Digital\Nueva Página Ingenieria Digital\Documentacion y Levantamiento de Informacion\documentacion_base_datos.pdf</output>
-					<language>es</language>
 					<thumbnails>128</thumbnails>
+					<language>es</language>
 				</pdf>
 			</DocsGenModule>
-			<CodeGenModule>
-				<php>
-					<output>D:\Ingenieria Digital\Nueva Página Ingenieria Digital\Documentacion y Levantamiento de Informacion\codigo.php</output>
-					<extends>utilidad</extends>
-					<genConsts>N</genConsts>
-					<genNames>N</genNames>
-				</php>
-			</CodeGenModule>
+			<SummaryGenModule>
+				<html>
+					<output>D:\Ingenieria Digital\Nueva Página Ingenieria Digital\Documentacion y Levantamiento de Informacion\sumario.html</output>
+				</html>
+			</SummaryGenModule>
 			<SqlGenModule>
 				<mysql>
 					<output>D:\wamp\www\sistema\Documentacion y Levantamiento de Informacion\script.sql</output>
 					<genRules>Y</genRules>
 				</mysql>
 			</SqlGenModule>
-			<SummaryGenModule>
-				<html>
-					<output>D:\Ingenieria Digital\Nueva Página Ingenieria Digital\Documentacion y Levantamiento de Informacion\sumario.html</output>
-				</html>
-			</SummaryGenModule>
+			<CodeGenModule>
+				<php>
+					<output>D:\Ingenieria Digital\Nueva Página Ingenieria Digital\Documentacion y Levantamiento de Informacion\codigo.php</output>
+					<genConsts>N</genConsts>
+					<extends>utilidad</extends>
+					<genNames>N</genNames>
+				</php>
+			</CodeGenModule>
 		</modsConfig>
 		<modsUsage>
 			<module name="SummaryGenModule.html"/>
@@ -7143,6 +7143,39 @@
 					<attribs>
 						<attrib name="comment"/>
 						<attrib name="matchType">s</attrib>
+						<attrib name="refField">141764</attrib>
+						<attrib name="name">fky_medio_publicidad</attrib>
+						<attrib name="id">151674</attrib>
+						<attrib name="onDelete">r</attrib>
+						<attrib name="onUpdate">c</attrib>
+						<attrib name="refTable">141762</attrib>
+						<attrib name="type">0</attrib>
+					</attribs>
+					<modsConfig/>
+					<docs>
+						<p>
+							<t>Medio Publicitario pro el cual el alumno se enteró de curso.</t>
+						</p>
+					</docs>
+				</field>
+				<field>
+					<fieldAttribs>
+						<attribs>
+							<attrib name="86">false</attrib>
+							<attrib name="85">false</attrib>
+							<attrib name="84">false</attrib>
+							<attrib name="83">false</attrib>
+							<attrib name="17">true</attrib>
+							<attrib name="16">false</attrib>
+							<attrib name="15">false</attrib>
+							<attrib name="339"/>
+							<attrib name="338">false</attrib>
+							<attrib name="340">false</attrib>
+						</attribs>
+					</fieldAttribs>
+					<attribs>
+						<attrib name="comment"/>
+						<attrib name="matchType">s</attrib>
 						<attrib name="refField">0</attrib>
 						<attrib name="name">est_ins</attrib>
 						<attrib name="id">146</attrib>
@@ -7942,7 +7975,7 @@
 				<rules/>
 				<attribs>
 					<attrib name="comment"/>
-					<attrib name="name">pago</attrib>
+					<attrib name="name">ingreso</attrib>
 					<attrib name="id">147</attrib>
 					<attrib name="schema"/>
 					<attrib name="tempPK"/>
@@ -7973,7 +8006,7 @@
 				</modsConfig>
 				<docs>
 					<p>
-						<t>Pago de los alumnos a la empresa por los cursos realizado o de la empresa a sus proveedores.</t>
+						<t>Pago de los alumnos a la empresa por los cursos realizados</t>
 					</p>
 				</docs>
 				<field>
@@ -7995,7 +8028,7 @@
 						<attrib name="comment"/>
 						<attrib name="matchType">s</attrib>
 						<attrib name="refField">0</attrib>
-						<attrib name="name">cod_pag</attrib>
+						<attrib name="name">cod_ing</attrib>
 						<attrib name="id">148</attrib>
 						<attrib name="onDelete">n</attrib>
 						<attrib name="onUpdate">n</attrib>
@@ -8028,17 +8061,17 @@
 						<attrib name="comment"/>
 						<attrib name="matchType">s</attrib>
 						<attrib name="refField">0</attrib>
-						<attrib name="name">fec_pag</attrib>
+						<attrib name="name">fec_ing</attrib>
 						<attrib name="id">149</attrib>
 						<attrib name="onDelete">n</attrib>
 						<attrib name="onUpdate">n</attrib>
 						<attrib name="refTable">0</attrib>
-						<attrib name="type">7</attrib>
+						<attrib name="type">46</attrib>
 					</attribs>
 					<modsConfig/>
 					<docs>
 						<p>
-							<t>Fecha del pago en el banco vía transferencia o depósito</t>
+							<t>Fecha del pago en el banco vía transferencia, depósito, débito, crédito o efectivo</t>
 						</p>
 					</docs>
 				</field>
@@ -8061,40 +8094,7 @@
 						<attrib name="comment"/>
 						<attrib name="matchType">s</attrib>
 						<attrib name="refField">0</attrib>
-						<attrib name="name">hor_pag</attrib>
-						<attrib name="id">150</attrib>
-						<attrib name="onDelete">n</attrib>
-						<attrib name="onUpdate">n</attrib>
-						<attrib name="refTable">0</attrib>
-						<attrib name="type">47</attrib>
-					</attribs>
-					<modsConfig/>
-					<docs>
-						<p>
-							<t>Hora a la que se hizo el pago</t>
-						</p>
-					</docs>
-				</field>
-				<field>
-					<fieldAttribs>
-						<attribs>
-							<attrib name="86">false</attrib>
-							<attrib name="85">false</attrib>
-							<attrib name="84">false</attrib>
-							<attrib name="83">false</attrib>
-							<attrib name="17">true</attrib>
-							<attrib name="16">false</attrib>
-							<attrib name="15">false</attrib>
-							<attrib name="339"/>
-							<attrib name="338">false</attrib>
-							<attrib name="340">false</attrib>
-						</attribs>
-					</fieldAttribs>
-					<attribs>
-						<attrib name="comment"/>
-						<attrib name="matchType">s</attrib>
-						<attrib name="refField">0</attrib>
-						<attrib name="name">dep_pag</attrib>
+						<attrib name="name">ref_ing</attrib>
 						<attrib name="id">153</attrib>
 						<attrib name="onDelete">n</attrib>
 						<attrib name="onUpdate">n</attrib>
@@ -8104,40 +8104,7 @@
 					<modsConfig/>
 					<docs>
 						<p>
-							<t>Número de Depósito Bancario o Referencia Bancaria.</t>
-						</p>
-					</docs>
-				</field>
-				<field>
-					<fieldAttribs>
-						<attribs>
-							<attrib name="86">false</attrib>
-							<attrib name="85">false</attrib>
-							<attrib name="84">false</attrib>
-							<attrib name="83">false</attrib>
-							<attrib name="17">true</attrib>
-							<attrib name="16">false</attrib>
-							<attrib name="15">false</attrib>
-							<attrib name="339"/>
-							<attrib name="338">false</attrib>
-							<attrib name="340">false</attrib>
-						</attribs>
-					</fieldAttribs>
-					<attribs>
-						<attrib name="comment"/>
-						<attrib name="matchType">s</attrib>
-						<attrib name="refField">0</attrib>
-						<attrib name="name">mon_pag</attrib>
-						<attrib name="id">33951</attrib>
-						<attrib name="onDelete">n</attrib>
-						<attrib name="onUpdate">n</attrib>
-						<attrib name="refTable">0</attrib>
-						<attrib name="type">26</attrib>
-					</attribs>
-					<modsConfig/>
-					<docs>
-						<p>
-							<t>Monto pagado</t>
+							<t>Número de Referencia del Depósito Bancario, Transferencia Bancaria, Punto de Venta, Recibo Manual de Pago(Efectivo).</t>
 						</p>
 					</docs>
 				</field>
@@ -8149,6 +8116,138 @@
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
 							<attrib name="17">false</attrib>
+							<attrib name="16">false</attrib>
+							<attrib name="15">false</attrib>
+							<attrib name="339"/>
+							<attrib name="338">false</attrib>
+							<attrib name="340">false</attrib>
+						</attribs>
+					</fieldAttribs>
+					<attribs>
+						<attrib name="comment"/>
+						<attrib name="matchType">s</attrib>
+						<attrib name="refField">0</attrib>
+						<attrib name="name">lot_ing</attrib>
+						<attrib name="id">148355</attrib>
+						<attrib name="onDelete">n</attrib>
+						<attrib name="onUpdate">n</attrib>
+						<attrib name="refTable">0</attrib>
+						<attrib name="type">1121</attrib>
+					</attribs>
+					<modsConfig/>
+					<docs>
+						<p>
+							<t>Representa al número de lote del punto de venta si el pago fué realizado con punto de venta.</t>
+						</p>
+					</docs>
+				</field>
+				<field>
+					<fieldAttribs>
+						<attribs>
+							<attrib name="86">false</attrib>
+							<attrib name="85">false</attrib>
+							<attrib name="84">false</attrib>
+							<attrib name="83">false</attrib>
+							<attrib name="17">true</attrib>
+							<attrib name="16">false</attrib>
+							<attrib name="15">false</attrib>
+							<attrib name="339"/>
+							<attrib name="338">false</attrib>
+							<attrib name="340">false</attrib>
+						</attribs>
+					</fieldAttribs>
+					<attribs>
+						<attrib name="comment"/>
+						<attrib name="matchType">s</attrib>
+						<attrib name="refField">0</attrib>
+						<attrib name="name">sub_ing</attrib>
+						<attrib name="id">148353</attrib>
+						<attrib name="onDelete">n</attrib>
+						<attrib name="onUpdate">n</attrib>
+						<attrib name="refTable">0</attrib>
+						<attrib name="type">26</attrib>
+					</attribs>
+					<modsConfig/>
+					<docs>
+						<p>
+							<t>Subtotal del Ingreso</t>
+						</p>
+					</docs>
+				</field>
+				<field>
+					<fieldAttribs>
+						<attribs>
+							<attrib name="86">false</attrib>
+							<attrib name="85">false</attrib>
+							<attrib name="84">false</attrib>
+							<attrib name="83">false</attrib>
+							<attrib name="17">true</attrib>
+							<attrib name="16">false</attrib>
+							<attrib name="15">false</attrib>
+							<attrib name="339"/>
+							<attrib name="338">false</attrib>
+							<attrib name="340">false</attrib>
+						</attribs>
+					</fieldAttribs>
+					<attribs>
+						<attrib name="comment"/>
+						<attrib name="matchType">s</attrib>
+						<attrib name="refField">0</attrib>
+						<attrib name="name">iva_ing</attrib>
+						<attrib name="id">148354</attrib>
+						<attrib name="onDelete">n</attrib>
+						<attrib name="onUpdate">n</attrib>
+						<attrib name="refTable">0</attrib>
+						<attrib name="type">26</attrib>
+					</attribs>
+					<modsConfig/>
+					<docs>
+						<p>
+							<t>Iva del Ingreso</t>
+						</p>
+					</docs>
+				</field>
+				<field>
+					<fieldAttribs>
+						<attribs>
+							<attrib name="86">false</attrib>
+							<attrib name="85">false</attrib>
+							<attrib name="84">false</attrib>
+							<attrib name="83">false</attrib>
+							<attrib name="17">true</attrib>
+							<attrib name="16">false</attrib>
+							<attrib name="15">false</attrib>
+							<attrib name="339"/>
+							<attrib name="338">false</attrib>
+							<attrib name="340">false</attrib>
+						</attribs>
+					</fieldAttribs>
+					<attribs>
+						<attrib name="comment"/>
+						<attrib name="matchType">s</attrib>
+						<attrib name="refField">0</attrib>
+						<attrib name="name">mon_ing</attrib>
+						<attrib name="id">33951</attrib>
+						<attrib name="onDelete">n</attrib>
+						<attrib name="onUpdate">n</attrib>
+						<attrib name="refTable">0</attrib>
+						<attrib name="type">26</attrib>
+					</attribs>
+					<modsConfig/>
+					<docs>
+						<p>
+							<t>Monto Total Pagado</t>
+						</p>
+					</docs>
+				</field>
+				<field>
+					<fieldAttribs>
+						<attribs>
+							<attrib name="86">false</attrib>
+							<attrib name="85">false</attrib>
+							<attrib name="84">false</attrib>
+							<attrib name="83">false</attrib>
+							<attrib name="17">true</attrib>
 							<attrib name="16">false</attrib>
 							<attrib name="15">false</attrib>
 							<attrib name="339"/>
@@ -8181,7 +8280,7 @@
 							<attrib name="85">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
-							<attrib name="17">false</attrib>
+							<attrib name="17">true</attrib>
 							<attrib name="16">false</attrib>
 							<attrib name="15">false</attrib>
 							<attrib name="339"/>
@@ -8225,34 +8324,6 @@
 					<attribs>
 						<attrib name="comment"/>
 						<attrib name="matchType">s</attrib>
-						<attrib name="refField">87639</attrib>
-						<attrib name="name">fky_proveedor</attrib>
-						<attrib name="id">90846</attrib>
-						<attrib name="onDelete">r</attrib>
-						<attrib name="onUpdate">c</attrib>
-						<attrib name="refTable">87637</attrib>
-						<attrib name="type">0</attrib>
-					</attribs>
-					<modsConfig/>
-				</field>
-				<field>
-					<fieldAttribs>
-						<attribs>
-							<attrib name="86">false</attrib>
-							<attrib name="85">false</attrib>
-							<attrib name="84">false</attrib>
-							<attrib name="83">false</attrib>
-							<attrib name="17">false</attrib>
-							<attrib name="16">false</attrib>
-							<attrib name="15">false</attrib>
-							<attrib name="339"/>
-							<attrib name="338">false</attrib>
-							<attrib name="340">false</attrib>
-						</attribs>
-					</fieldAttribs>
-					<attribs>
-						<attrib name="comment"/>
-						<attrib name="matchType">s</attrib>
 						<attrib name="refField">128</attrib>
 						<attrib name="name">fky_banco_origen</attrib>
 						<attrib name="id">85292</attrib>
@@ -8264,7 +8335,7 @@
 					<modsConfig/>
 					<docs>
 						<p>
-							<t>Banco del Cliente</t>
+							<t>Banco del Cliente(Opcional)</t>
 						</p>
 					</docs>
 				</field>
@@ -8297,7 +8368,7 @@
 					<modsConfig/>
 					<docs>
 						<p>
-							<t>Banco de Ingeniería Digital a donde pagaron o transfieron</t>
+							<t>Banco de Ingeniería Digital a donde pagaron o transfieron (Opcional)</t>
 						</p>
 					</docs>
 				</field>
@@ -8365,7 +8436,7 @@
 							<attrib name="85">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
-							<attrib name="17">false</attrib>
+							<attrib name="17">true</attrib>
 							<attrib name="16">false</attrib>
 							<attrib name="15">false</attrib>
 							<attrib name="339"/>
@@ -8467,7 +8538,7 @@
 						<attrib name="comment"/>
 						<attrib name="matchType">s</attrib>
 						<attrib name="refField">0</attrib>
-						<attrib name="name">url_pag</attrib>
+						<attrib name="name">url_ing</attrib>
 						<attrib name="id">85293</attrib>
 						<attrib name="onDelete">n</attrib>
 						<attrib name="onUpdate">n</attrib>
@@ -8500,7 +8571,7 @@
 						<attrib name="comment"/>
 						<attrib name="matchType">s</attrib>
 						<attrib name="refField">0</attrib>
-						<attrib name="name">obs_pag</attrib>
+						<attrib name="name">obs_ing</attrib>
 						<attrib name="id">91248</attrib>
 						<attrib name="onDelete">n</attrib>
 						<attrib name="onUpdate">n</attrib>
@@ -8533,7 +8604,7 @@
 						<attrib name="comment"/>
 						<attrib name="matchType">s</attrib>
 						<attrib name="refField">0</attrib>
-						<attrib name="name">est_pag</attrib>
+						<attrib name="name">est_ing</attrib>
 						<attrib name="id">160</attrib>
 						<attrib name="onDelete">n</attrib>
 						<attrib name="onUpdate">n</attrib>
@@ -8546,10 +8617,10 @@
 							<t>Estatus:</t>
 						</p>
 						<p>
-							<t>V: Validado</t>
+							<t>V: Pago Validado</t>
 						</p>
 						<p>
-							<t>N: No validado</t>
+							<t>N: Pago No validado</t>
 						</p>
 					</docs>
 				</field>
@@ -15444,7 +15515,7 @@
 				<rules/>
 				<attribs>
 					<attrib name="comment"/>
-					<attrib name="name">medios_publicidad</attrib>
+					<attrib name="name">medio_publicidad</attrib>
 					<attrib name="id">141762</attrib>
 					<attrib name="schema"/>
 					<attrib name="tempPK"/>
@@ -15484,10 +15555,10 @@
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
 							<attrib name="84">false</attrib>
-							<attrib name="83">false</attrib>
-							<attrib name="17">false</attrib>
+							<attrib name="83">true</attrib>
+							<attrib name="17">true</attrib>
 							<attrib name="16">false</attrib>
-							<attrib name="15">false</attrib>
+							<attrib name="15">true</attrib>
 							<attrib name="339"/>
 							<attrib name="338">false</attrib>
 							<attrib name="340">false</attrib>
@@ -15502,7 +15573,7 @@
 						<attrib name="onDelete">n</attrib>
 						<attrib name="onUpdate">n</attrib>
 						<attrib name="refTable">0</attrib>
-						<attrib name="type">0</attrib>
+						<attrib name="type">5</attrib>
 					</attribs>
 					<modsConfig/>
 					<docs>
@@ -15518,7 +15589,7 @@
 							<attrib name="85">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
-							<attrib name="17">false</attrib>
+							<attrib name="17">true</attrib>
 							<attrib name="16">false</attrib>
 							<attrib name="15">false</attrib>
 							<attrib name="339"/>
@@ -15535,7 +15606,7 @@
 						<attrib name="onDelete">n</attrib>
 						<attrib name="onUpdate">n</attrib>
 						<attrib name="refTable">0</attrib>
-						<attrib name="type">0</attrib>
+						<attrib name="type">7577</attrib>
 					</attribs>
 					<modsConfig/>
 					<docs>
@@ -15551,7 +15622,7 @@
 							<attrib name="85">false</attrib>
 							<attrib name="84">false</attrib>
 							<attrib name="83">false</attrib>
-							<attrib name="17">false</attrib>
+							<attrib name="17">true</attrib>
 							<attrib name="16">false</attrib>
 							<attrib name="15">false</attrib>
 							<attrib name="339"/>
@@ -15568,7 +15639,7 @@
 						<attrib name="onDelete">n</attrib>
 						<attrib name="onUpdate">n</attrib>
 						<attrib name="refTable">0</attrib>
-						<attrib name="type">0</attrib>
+						<attrib name="type">32</attrib>
 					</attribs>
 					<modsConfig/>
 					<docs>

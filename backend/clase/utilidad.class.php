@@ -80,6 +80,11 @@ class utilidad
 		return mysqli_insert_id($this->mysqli);
 	} 
 
+  public function error_nro()
+  {
+    return $this->mysqli->errno;
+  }
+
   public function filas_afectadas(){
     return $this->mysqli->affected_rows;
   }

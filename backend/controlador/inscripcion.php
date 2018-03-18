@@ -53,7 +53,14 @@ if($acceso["est_per"]=="A")
 				$obj->mensaje("success","Inscripci&oacute;n agregada correctamente");
 			}else
 			{
-				$obj->mensaje("danger","Error al realizar la Inscripci&oacute;n");
+				$error=$obj->error_nro();
+				if($error==1062){
+				$obj->mensaje("danger","Error: Ud ya se encontraba pre-inscrito para el curso, por favor ahora registra el pago en la opci&oacute;n 'Registrar Pago'.");
+			     }else
+			     {
+				$obj->mensaje("danger","Error al realizar la pre-inscripci&oacute;n. Nro Error: $error");
+			     }
+
 			}
 			
 		break;

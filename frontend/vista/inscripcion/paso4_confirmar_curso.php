@@ -1,8 +1,11 @@
 <?php
 require("../../../backend/clase/curso.class.php");
 require("../../../backend/clase/turno.class.php");
+require("../../../backend/clase/medio_publicidad.class.php");
+
 $obj=new curso;	
 $objTurno=new turno;
+$objMedio=new medio_publicidad;
 
 	foreach($_REQUEST as $nombre_campo => $valor){
 	  	$obj->asignar_valor($nombre_campo,$valor);
@@ -145,8 +148,35 @@ echo "el curso es: ".$obj->fky_curso;
 			</div>
 	
 		  </div>
+
+		 <div class="row bg-primary text-white">
+		 	 <div class="col-12 text-center">
+		  	<h3>¿Cómo te enteraste del curso?</h3>
+		 	 </div>
+		  </div>
+
+        <div class="row mt-1">
+
+	    <div class="col-md-3 col-12 align-self-center text-left">
+			     <strong>Medio Publicidad:</strong>
+		</div>		  
+
+		<div class="col-md-9 col-12 mt-2">
+		   <select name="fky_medio_publicidad" id="fky_medio_publicidad" class="form-control">
+		   <option>Seleccione...</option>
+		   <?php
+		   $objMedio->est_med="A";
+		   $cur=$objMedio->listar();
+		   while(($medio=$objMedio->extraer_dato($cur))>0)
+		   {	
+		   		echo "<option value='$medio[cod_med]'>$medio[nom_med]</option>";
+		   }
+		   ?>
+		   </select>
+		</div>
+		</div>		  		  
 	
-		  <div class="row mt-2 bg-light">
+		  <div class="row mt-3 bg-light">
 		  	 <div class="col-12  text-center">
 			     <input type="submit" class="btn btn-primary btn-md" value="Guardar Pre-Inscripción">
 			</div>

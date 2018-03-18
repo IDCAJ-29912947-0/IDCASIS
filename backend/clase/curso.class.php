@@ -161,7 +161,7 @@ class curso extends utilidad
         $filtro5 
         $filtro6;";
 
-        echo $sql;
+       
      
    	    return $this->ejecutar($sql);  
 
