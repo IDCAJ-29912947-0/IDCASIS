@@ -23,7 +23,8 @@ if($acceso["est_per"]=="A")
 
 	switch ($_REQUEST["accion"]) {
 
-		case 'agregar':    
+		case 'agregar_remoto':
+		        
 			$res=$obj->agregar();
 			$prk_aud=$obj->ultimo_id_insertado();
 			if($prk_aud>0){

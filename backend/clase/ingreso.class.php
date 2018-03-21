@@ -1,19 +1,7 @@
 <?php
-//==============================================================================
-//===   area: Área del Curso: Diseño Gráfico, Informática, Electrónica, Comunicación Social, Etc 
-/*
-	cod_are int (Código del Área)
-	nom_are varchar-35 (Nombre del Area)
-	est_are char (Estatus del Area)
-	A: Activa
-	I: Inactiva    
-*/  
-
-//==============================================================================
-//===	Campos B.D: cod_are, nom_are, est_are
 require_once("utilidad.class.php");
 
-class area extends utilidad
+class ingreso extends utilidad
 {
 
   public $cod_are;
