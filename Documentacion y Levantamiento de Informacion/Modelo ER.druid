@@ -2,8 +2,8 @@
 
 <project version="2">
 	<attribs>
-		<attrib name="build">194</attrib>
-		<attrib name="serial">152149</attrib>
+		<attrib name="build">201</attrib>
+		<attrib name="serial">153104</attrib>
 	</attribs>
 	<database>
 		<attribs>
@@ -168,29 +168,29 @@
 				<pdf>
 					<pageSize>1</pageSize>
 					<output>D:\Ingenieria Digital\Nueva Página Ingenieria Digital\Documentacion y Levantamiento de Informacion\documentacion_base_datos.pdf</output>
-					<thumbnails>128</thumbnails>
 					<language>es</language>
+					<thumbnails>128</thumbnails>
 				</pdf>
 			</DocsGenModule>
-			<SummaryGenModule>
-				<html>
-					<output>D:\Ingenieria Digital\Nueva Página Ingenieria Digital\Documentacion y Levantamiento de Informacion\sumario.html</output>
-				</html>
-			</SummaryGenModule>
+			<CodeGenModule>
+				<php>
+					<output>D:\Ingenieria Digital\Nueva Página Ingenieria Digital\Documentacion y Levantamiento de Informacion\codigo.php</output>
+					<extends>utilidad</extends>
+					<genConsts>N</genConsts>
+					<genNames>N</genNames>
+				</php>
+			</CodeGenModule>
 			<SqlGenModule>
 				<mysql>
 					<output>D:\wamp\www\sistema\Documentacion y Levantamiento de Informacion\script.sql</output>
 					<genRules>Y</genRules>
 				</mysql>
 			</SqlGenModule>
-			<CodeGenModule>
-				<php>
-					<output>D:\Ingenieria Digital\Nueva Página Ingenieria Digital\Documentacion y Levantamiento de Informacion\codigo.php</output>
-					<genConsts>N</genConsts>
-					<extends>utilidad</extends>
-					<genNames>N</genNames>
-				</php>
-			</CodeGenModule>
+			<SummaryGenModule>
+				<html>
+					<output>D:\Ingenieria Digital\Nueva Página Ingenieria Digital\Documentacion y Levantamiento de Informacion\sumario.html</output>
+				</html>
+			</SummaryGenModule>
 		</modsConfig>
 		<modsUsage>
 			<module name="SummaryGenModule.html"/>
@@ -5357,7 +5357,7 @@
 							<attrib name="86">false</attrib>
 							<attrib name="85">false</attrib>
 							<attrib name="84">false</attrib>
-							<attrib name="83">true</attrib>
+							<attrib name="83">false</attrib>
 							<attrib name="17">true</attrib>
 							<attrib name="16">false</attrib>
 							<attrib name="15">true</attrib>
@@ -5371,6 +5371,34 @@
 						<attrib name="matchType">s</attrib>
 						<attrib name="refField">0</attrib>
 						<attrib name="name">num_fac</attrib>
+						<attrib name="id">152627</attrib>
+						<attrib name="onDelete">n</attrib>
+						<attrib name="onUpdate">n</attrib>
+						<attrib name="refTable">0</attrib>
+						<attrib name="type">1121</attrib>
+					</attribs>
+					<modsConfig/>
+				</field>
+				<field>
+					<fieldAttribs>
+						<attribs>
+							<attrib name="86">false</attrib>
+							<attrib name="85">false</attrib>
+							<attrib name="84">false</attrib>
+							<attrib name="83">true</attrib>
+							<attrib name="17">true</attrib>
+							<attrib name="16">false</attrib>
+							<attrib name="15">false</attrib>
+							<attrib name="339"/>
+							<attrib name="338">false</attrib>
+							<attrib name="340">false</attrib>
+						</attribs>
+					</fieldAttribs>
+					<attribs>
+						<attrib name="comment"/>
+						<attrib name="matchType">s</attrib>
+						<attrib name="refField">0</attrib>
+						<attrib name="name">nro_fac</attrib>
 						<attrib name="id">207</attrib>
 						<attrib name="onDelete">n</attrib>
 						<attrib name="onUpdate">n</attrib>
@@ -8039,6 +8067,39 @@
 					<docs>
 						<p>
 							<t>Código del Pago, Auto incremental</t>
+						</p>
+					</docs>
+				</field>
+				<field>
+					<fieldAttribs>
+						<attribs>
+							<attrib name="86">false</attrib>
+							<attrib name="85">false</attrib>
+							<attrib name="84">false</attrib>
+							<attrib name="83">false</attrib>
+							<attrib name="17">true</attrib>
+							<attrib name="16">false</attrib>
+							<attrib name="15">false</attrib>
+							<attrib name="339"/>
+							<attrib name="338">false</attrib>
+							<attrib name="340">false</attrib>
+						</attribs>
+					</fieldAttribs>
+					<attribs>
+						<attrib name="comment"/>
+						<attrib name="matchType">s</attrib>
+						<attrib name="refField">0</attrib>
+						<attrib name="name">reg_ing</attrib>
+						<attrib name="id">152150</attrib>
+						<attrib name="onDelete">n</attrib>
+						<attrib name="onUpdate">n</attrib>
+						<attrib name="refTable">0</attrib>
+						<attrib name="type">46</attrib>
+					</attribs>
+					<modsConfig/>
+					<docs>
+						<p>
+							<t>Fecha de Registro del Pago</t>
 						</p>
 					</docs>
 				</field>
@@ -12575,7 +12636,19 @@
 					<modsConfig/>
 					<docs>
 						<p>
-							<t>Estatus del tipo de pago</t>
+							<t>Estatus del tipo de pago.
+</t>
+						</p>
+						<p>
+							<t>A:  Tipo de Pago Activo, Pago en Local
+</t>
+						</p>
+						<p>
+							<t>O: Tipo de Pago Activo, Pago Online
+</t>
+						</p>
+						<p>
+							<t>I:   Método Inactivo</t>
 						</p>
 					</docs>
 				</field>

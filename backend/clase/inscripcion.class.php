@@ -86,21 +86,24 @@ class inscripcion extends utilidad
    }//Fin Cambio Estatus   
 //==============================================================================
 
-   public function filtrar($cod_ins, $fec_ins, $fky_alumno, $fky_curso, $est_ins){
+   public function filtrar($cod_ins, $fec_ins, $fky_alumno, $fky_curso, $est_ins,$est_cur){
 
          $filtro1=($cod_ins!="")?" and cod_ins=$cod_ins":"";
          $filtro2=($fec_ins!="")?" and fec_ins='$fec_ins'":"";
          $filtro3=($fky_alumno!="")?" and fky_alumno=$fky_alumno":"";
          $filtro4=($fky_curso!="")?" and fky_curso=$fky_curso":"";
-         $filtro5=($est_ins!="")?" and est_cur='$est_cur'":"";                  
+         $filtro5=($est_ins!="")?" and est_ins='$est_ins'":"";                  
+         $filtro6=($est_cur!="")?" and est_cur='$est_cur'":"";
 
    		$sql="select i.*,a.ide_alu,a.nom_alu,a.ape_alu,c.ini_cur, tc.nom_tip_cur
                from inscripcion i, alumno a, curso c,  tipo_curso tc
                where 
-               i.fky_alumno=a.cod_alu,
-               i.fky_curso=c.cod_cur,
+               i.fky_alumno=a.cod_alu and
+               i.fky_curso=c.cod_cur and
                c.fky_tipo_curso=tc.cod_tip_cur
-               $filtro1 $filtro2 $filtro3 $filtro4 $filtro5;";
+               $filtro1 $filtro2 $filtro3 $filtro4 $filtro5 $filtro6;";
+
+      echo $sql;         
 
    	    return $this->ejecutar($sql);  
 
