@@ -11,20 +11,20 @@ class ingreso extends utilidad
 //==============================================================================
    public function agregar(){
 
-    	$sql="insert into area(nom_are,est_are)values('$this->nom_are','$this->est_are');";
+    	$sql="insert into ingreso(nom_are,est_are)values('$this->nom_are','$this->est_are');";
     	return $this->ejecutar($sql);
    }//Fin Agregar
 //==============================================================================
 
    public function modificar(){
-   		$sql="update area set nom_are='$this->nom_are',est_are='$this->est_are' where cod_are='$this->cod_are';";
+   		$sql="update ingreso set nom_are='$this->nom_are',est_are='$this->est_are' where cod_are='$this->cod_are';";
    		return $this->ejecutar($sql);
    	
    }//Fin Modificar  
 //==============================================================================
 
    public function listar(){
-   		$sql="select * from area where est_are='$this->est_are';";
+   		$sql="select * from ingreso where est_are='$this->est_are';";
    		return $this->ejecutar($sql);
    	
    }//Fin Listar 
@@ -51,7 +51,7 @@ class ingreso extends utilidad
         $filtro2 = ($nom_are!="") ? "and nom_are like '%$nom_are%'":"";
         $filtro3 = ($est_are!="") ? "and est_are='$est_are'":"";
 
-   		  $sql="select * from area $where $filtro1 $filtro2 $filtro3;";
+   		  $sql="select * from ingreso $where $filtro1 $filtro2 $filtro3;";
 
    	    return $this->ejecutar($sql);  
 

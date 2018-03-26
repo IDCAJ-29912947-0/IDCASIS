@@ -50,7 +50,7 @@ $datos=$obj->extraer_dato($resultado);
 	 	 </div>
 	  </div>
 
-	  <div class="row mt-2">
+	  <div class="row mt-2 bg-light">
 
 		<div class="col-md-2 col-12 align-self-center">
 		     <label for="">Cédula:</label>
@@ -72,7 +72,7 @@ $datos=$obj->extraer_dato($resultado);
 
 	  </div>
 
-	  <div class="row mt-2">
+	  <div class="row mt-2 bg-light">
 
 		<div class="col-md-2 col-12 align-self-center">
 		     <label for="">Apellidos:</label>
@@ -90,7 +90,7 @@ $datos=$obj->extraer_dato($resultado);
 	  </div>	  
 
 
-	  <div class="row mt-3">
+	  <div class="row mt-3 bg-light">
 	  <div class="col-md-3 col-12 align-self-center">
 		     <label for="">Curso a Pagar:</label>
 		</div>
@@ -111,7 +111,7 @@ $datos=$obj->extraer_dato($resultado);
 
 	  </div>
 
-	  <div class="row mt-2">
+	  <div class="row mt-2 bg-light">
 	  <div class="col-md-3 col-12 align-self-center">
 		     <label for="">Forma de Pago:</label>
 		</div>
@@ -131,7 +131,7 @@ $datos=$obj->extraer_dato($resultado);
 
 	  </div>
 
-	  <div class="row mt-2">
+	  <div class="row mt-2 bg-light">
 	  <div class="col-md-3 col-12 align-self-center">
 		     <label for="">Tu Banco:</label>
 		</div>
@@ -151,7 +151,7 @@ $datos=$obj->extraer_dato($resultado);
 
 	  </div>
 
-	  <div class="row mt-2">
+	  <div class="row mt-2 bg-light">
 	  <div class="col-md-3 col-12 align-self-center">
 		     <label for="">Nuestro Banco:</label>
 		</div>
@@ -207,6 +207,17 @@ $datos=$obj->extraer_dato($resultado);
 			</div>
 	  </div>
 
+	  <div class="row mt-2 bg-light">
+
+		<div class="col-md-3 col-12 align-self-center">
+		     <label for="">Observaciones:</label>
+		</div>
+		<div class="col-md-7 col-12">
+		    <textarea name="obs_ing" id="obs_ing" cols="100" rows="2" class="form-control" placeholder="Si tienes algún comentario por favor notificar por aquí"></textarea>
+		</div>
+
+	  </div>
+
 	  <div class="row bg-primary text-white mt-3">
 	 	 <div class="col-12 text-center">
 	  	   <h5>Facturación</h5>
@@ -239,7 +250,7 @@ $datos=$obj->extraer_dato($resultado);
 		  	  	  </select>	  
 			</div>
 	    </div>
-	  </div>
+	  
 
 	  <div id="retiene_islr" class="d-none">
 	     <div class="row mt-2 bg-light align-items-center">
@@ -270,6 +281,44 @@ $datos=$obj->extraer_dato($resultado);
 			</div>
 	    </div>
 	  </div>	  
+
+
+	  <div class="row mt-2 bg-light">
+
+		<div class="col-md-3 col-12 align-self-center">
+		     <label for="">C&eacute;dula o RIF:</label>
+		</div>
+		<div class="col-md-3 col-12">
+		    <input type="text" name="rif_tit" id="rif_tit" maxlength="15" class="form-control" placeholder="C&eacute;dula o RIF para la Facturas">
+		</div>
+
+	  </div>
+
+
+
+	  <div class="row mt-2 bg-light">
+
+		<div class="col-md-3 col-12 align-self-center">
+		     <label for="">Nombre / Razón Social:</label>
+		</div>
+		<div class="col-md-6 col-12">
+		    <input type="text" name="nom_tit" id="nom_tit" maxlength="80" class="form-control" placeholder="A nombre de quien deseas la factura">
+		</div>
+
+	  </div>
+
+	  <div class="row mt-2 bg-light">
+
+		<div class="col-md-3 col-12 align-self-center">
+		     <label for="">Domicilio Fiscal:</label>
+		</div>
+		<div class="col-md-8 col-12">
+		    <input type="text" name="dir_tit" id="dir_tit" maxlength="100" class="form-control" placeholder="Direcci&oacute;n / Domicilio Fiscal">
+		</div>
+
+	  </div>
+
+	</div>
 
 	  <div class="row mt-3 bg-light">
 	  	 <div class="col-12  text-center">
