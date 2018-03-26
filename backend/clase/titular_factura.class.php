@@ -5,12 +5,13 @@
 cod_tit int 					(Código del Titular)
 rif_tit varchar-15 				(Rif del titular)
 nom_tit varchar-80 				(Nombre del Titular)
-ret_iva char 					(¿Retiene IVA?)
-								0 - No retiene IVA
-								8 - Retiene el 8% de IVA
-ret_isl char 					(¿Retiene ISLR?)
-								0 - No retiene ISLR
-								8 - Retiene el 8% de ISLR
+dir_tit varchar-80         (Dirección del Titukar)
+iva_tit char 					(¿Retiene IVA?)
+								N - No retiene IVA
+								S - SI, retiene IVA
+isl_tit char 					(¿Retiene ISLR?)
+								N - No, no retiene ISLR
+								S - Si, Retiene ISLR
 tip_tit char  				   (Tipo de Titular:)
 								N: Natural
 								J: Jurídico
@@ -20,7 +21,7 @@ est_tit char 					(Estatus del Titular de la Factura)
 								I: Inactivo
 */                    
 //==============================================================================
-//===	Campos B.D: cod_tit, rif_tit, nom_tit, ret_iva, ret_isl, tip_tit, est_tit	
+//===	Campos B.D: cod_tit, rif_tit, nom_tit, dir_tit, iva_tit, isl_tit, tip_tit, est_tit	
 
 class titular_factura extends utilidad
 {

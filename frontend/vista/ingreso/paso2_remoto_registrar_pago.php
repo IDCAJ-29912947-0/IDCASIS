@@ -178,7 +178,7 @@ $datos=$obj->extraer_dato($resultado);
 		     <label for="">Num. Depósito/Transferencia:</label>
 		</div>
 		<div class="col-md-3 col-12">
-		    <input type="text" name="mon_ing" id="mon_ing" maxlength="8" class="form-control" placeholder="Núm. Referencia">
+		    <input type="text" name="ref_ing" id="ref_ing" maxlength="10" class="form-control" placeholder="Núm. Referencia">
 		</div>
 
 	  </div>
@@ -190,10 +190,22 @@ $datos=$obj->extraer_dato($resultado);
 		     <label for="">Fecha del Pago:</label>
 		</div>
 		<div class="col-md-3 col-12">
-		    <input type="date" name="reg_ing" id="reg_ing" class="form-control">
+		    <input type="date" name="fec_ing" id="fec_ing" class="form-control">
 		</div>
 
 	  </div>	  
+
+
+	  <div class="row mt-2 bg-light">
+
+		<div class="col-md-3 col-12 align-self-center">
+		     <label for="">Monto:</label>
+		</div>
+		<div class="col-md-3 col-12">
+		    <input type="text" name="mon_ing" id="mon_ing" maxlength="10" class="form-control" placeholder="Monto">
+		</div>
+
+	  </div>
 
 	  <div class="row mt-2 bg-light align-items-center">
 			<div class="col-md-3 col-12 text-left">

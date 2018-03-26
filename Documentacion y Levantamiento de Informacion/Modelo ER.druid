@@ -2,8 +2,8 @@
 
 <project version="2">
 	<attribs>
-		<attrib name="build">201</attrib>
-		<attrib name="serial">153104</attrib>
+		<attrib name="build">206</attrib>
+		<attrib name="serial">153581</attrib>
 	</attribs>
 	<database>
 		<attribs>
@@ -167,30 +167,30 @@
 			<DocsGenModule>
 				<pdf>
 					<pageSize>1</pageSize>
-					<output>D:\Ingenieria Digital\Nueva Página Ingenieria Digital\Documentacion y Levantamiento de Informacion\documentacion_base_datos.pdf</output>
-					<language>es</language>
+					<output>D:\wamp\www\sistema\Documentacion y Levantamiento de Informacion\Metodologia de Desarrollo.pdf</output>
 					<thumbnails>128</thumbnails>
+					<language>es</language>
 				</pdf>
 			</DocsGenModule>
-			<CodeGenModule>
-				<php>
-					<output>D:\Ingenieria Digital\Nueva Página Ingenieria Digital\Documentacion y Levantamiento de Informacion\codigo.php</output>
-					<extends>utilidad</extends>
-					<genConsts>N</genConsts>
-					<genNames>N</genNames>
-				</php>
-			</CodeGenModule>
+			<SummaryGenModule>
+				<html>
+					<output>D:\Ingenieria Digital\Nueva Página Ingenieria Digital\Documentacion y Levantamiento de Informacion\sumario.html</output>
+				</html>
+			</SummaryGenModule>
 			<SqlGenModule>
 				<mysql>
 					<output>D:\wamp\www\sistema\Documentacion y Levantamiento de Informacion\script.sql</output>
 					<genRules>Y</genRules>
 				</mysql>
 			</SqlGenModule>
-			<SummaryGenModule>
-				<html>
-					<output>D:\Ingenieria Digital\Nueva Página Ingenieria Digital\Documentacion y Levantamiento de Informacion\sumario.html</output>
-				</html>
-			</SummaryGenModule>
+			<CodeGenModule>
+				<php>
+					<output>D:\Ingenieria Digital\Nueva Página Ingenieria Digital\Documentacion y Levantamiento de Informacion\codigo.php</output>
+					<genConsts>N</genConsts>
+					<extends>utilidad</extends>
+					<genNames>N</genNames>
+				</php>
+			</CodeGenModule>
 		</modsConfig>
 		<modsUsage>
 			<module name="SummaryGenModule.html"/>
@@ -8221,72 +8221,6 @@
 						<attrib name="comment"/>
 						<attrib name="matchType">s</attrib>
 						<attrib name="refField">0</attrib>
-						<attrib name="name">sub_ing</attrib>
-						<attrib name="id">148353</attrib>
-						<attrib name="onDelete">n</attrib>
-						<attrib name="onUpdate">n</attrib>
-						<attrib name="refTable">0</attrib>
-						<attrib name="type">26</attrib>
-					</attribs>
-					<modsConfig/>
-					<docs>
-						<p>
-							<t>Subtotal del Ingreso</t>
-						</p>
-					</docs>
-				</field>
-				<field>
-					<fieldAttribs>
-						<attribs>
-							<attrib name="86">false</attrib>
-							<attrib name="85">false</attrib>
-							<attrib name="84">false</attrib>
-							<attrib name="83">false</attrib>
-							<attrib name="17">true</attrib>
-							<attrib name="16">false</attrib>
-							<attrib name="15">false</attrib>
-							<attrib name="339"/>
-							<attrib name="338">false</attrib>
-							<attrib name="340">false</attrib>
-						</attribs>
-					</fieldAttribs>
-					<attribs>
-						<attrib name="comment"/>
-						<attrib name="matchType">s</attrib>
-						<attrib name="refField">0</attrib>
-						<attrib name="name">iva_ing</attrib>
-						<attrib name="id">148354</attrib>
-						<attrib name="onDelete">n</attrib>
-						<attrib name="onUpdate">n</attrib>
-						<attrib name="refTable">0</attrib>
-						<attrib name="type">26</attrib>
-					</attribs>
-					<modsConfig/>
-					<docs>
-						<p>
-							<t>Iva del Ingreso</t>
-						</p>
-					</docs>
-				</field>
-				<field>
-					<fieldAttribs>
-						<attribs>
-							<attrib name="86">false</attrib>
-							<attrib name="85">false</attrib>
-							<attrib name="84">false</attrib>
-							<attrib name="83">false</attrib>
-							<attrib name="17">true</attrib>
-							<attrib name="16">false</attrib>
-							<attrib name="15">false</attrib>
-							<attrib name="339"/>
-							<attrib name="338">false</attrib>
-							<attrib name="340">false</attrib>
-						</attribs>
-					</fieldAttribs>
-					<attribs>
-						<attrib name="comment"/>
-						<attrib name="matchType">s</attrib>
-						<attrib name="refField">0</attrib>
 						<attrib name="name">mon_ing</attrib>
 						<attrib name="id">33951</attrib>
 						<attrib name="onDelete">n</attrib>
@@ -8352,7 +8286,7 @@
 					<attribs>
 						<attrib name="comment"/>
 						<attrib name="matchType">s</attrib>
-						<attrib name="refField">50</attrib>
+						<attrib name="refField">82645</attrib>
 						<attrib name="name">fky_alumno</attrib>
 						<attrib name="id">152</attrib>
 						<attrib name="onDelete">r</attrib>
@@ -13484,7 +13418,7 @@
 						<attrib name="comment"/>
 						<attrib name="matchType">s</attrib>
 						<attrib name="refField">0</attrib>
-						<attrib name="name">ret_iva</attrib>
+						<attrib name="name">iva_tit</attrib>
 						<attrib name="id">220</attrib>
 						<attrib name="onDelete">n</attrib>
 						<attrib name="onUpdate">n</attrib>
@@ -13497,10 +13431,10 @@
 							<t>¿Retiene IVA?</t>
 						</p>
 						<p>
-							<t>0 - No retiene IVA</t>
+							<t>S: Si, si retiene IVA</t>
 						</p>
 						<p>
-							<t>8 - Retiene el 8% de IVA</t>
+							<t>N: No, no retiene IVA</t>
 						</p>
 					</docs>
 				</field>
@@ -13536,10 +13470,11 @@
 							<t>¿Retiene ISLR?</t>
 						</p>
 						<p>
-							<t>0 - No retiene ISLR</t>
+							<t>S: Si, si retiene ISLR
+</t>
 						</p>
 						<p>
-							<t>8 - Retiene el 8% de ISLR</t>
+							<t>N: No, no retiene ISLR</t>
 						</p>
 					</docs>
 				</field>
@@ -13614,12 +13549,10 @@
 					<modsConfig/>
 					<docs>
 						<p>
-							<t>Estatus del Titular de la Factura
-</t>
+							<t>Estatus del Titular de la Factura</t>
 						</p>
 						<p>
-							<t>A: Activo
-</t>
+							<t>A: Activo</t>
 						</p>
 						<p>
 							<t>I: Inactivo</t>

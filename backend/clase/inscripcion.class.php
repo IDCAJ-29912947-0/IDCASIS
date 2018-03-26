@@ -95,7 +95,7 @@ class inscripcion extends utilidad
          $filtro5=($est_ins!="")?" and est_ins='$est_ins'":"";                  
          $filtro6=($est_cur!="")?" and est_cur='$est_cur'":"";
 
-   		$sql="select i.*,a.ide_alu,a.nom_alu,a.ape_alu,c.ini_cur, tc.nom_tip_cur
+   		$sql="select i.*,a.cod_alu,a.ide_alu,a.nom_alu,a.ape_alu,c.ini_cur, tc.nom_tip_cur,c.cod_cur
                from inscripcion i, alumno a, curso c,  tipo_curso tc
                where 
                i.fky_alumno=a.cod_alu and
