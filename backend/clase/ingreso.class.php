@@ -100,8 +100,7 @@ class ingreso extends utilidad
               '$this->obs_ing',
               '$this->est_ing');";
 
-              echo $sql;
-
+             
     	return $this->ejecutar($sql);
    }//Fin Agregar
 //==============================================================================
@@ -191,6 +190,26 @@ class ingreso extends utilidad
 
    }// Fin Filtrar
 //==============================================================================
+     public function modificar_url($cod_ing,$url_nueva){
+
+        $sql="update ingreso set url_ing='$url_nueva' where cod_ing=$cod_ing";
+        return $this->ejecutar($sql);  
+   }
+//==============================================================================
+
+   public function subir_material($url_original,$tmp_name,$carpeta,$nombre_final){
+         $tmp = explode(".",$url_original);
+         $extension = end($tmp);
+         $subir= move_uploaded_file($tmp_name, $carpeta.$nombre_final.".".$extension);
+                        
+         if($subir==true)
+         {
+           return $nombre_final.".".$extension;
+         }  else
+             return false;
+   }
+
+  //==============================================================================  
 
 }//Fin de la Clase
 ?>

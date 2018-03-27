@@ -15,6 +15,7 @@ class utilidad
     private $fky_usuario;
     private $acc_aud;
     public  $ruta_contenido_backend="../../frontend/material/";
+    public  $ruta_ingreso_backend="../../frontend/ingreso/";    
     public  $ruta_contenido_frontend="../../material/";
 
 
@@ -54,7 +55,7 @@ class utilidad
 
 //=== ejecutar: función para ejecutar una acción en la base de datos.
 	public function ejecutar($sql){
-    //echo $sql;
+    
 		$this->sql=$sql; 
 		return $this->mysqli->query($sql);
 	}// Fin de la función ejecutar()  

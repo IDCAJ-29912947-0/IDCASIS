@@ -2,7 +2,7 @@
 
 <project version="2">
 	<attribs>
-		<attrib name="build">206</attrib>
+		<attrib name="build">207</attrib>
 		<attrib name="serial">153581</attrib>
 	</attribs>
 	<database>
@@ -168,29 +168,29 @@
 				<pdf>
 					<pageSize>1</pageSize>
 					<output>D:\wamp\www\sistema\Documentacion y Levantamiento de Informacion\Metodologia de Desarrollo.pdf</output>
-					<thumbnails>128</thumbnails>
 					<language>es</language>
+					<thumbnails>128</thumbnails>
 				</pdf>
 			</DocsGenModule>
-			<SummaryGenModule>
-				<html>
-					<output>D:\Ingenieria Digital\Nueva Página Ingenieria Digital\Documentacion y Levantamiento de Informacion\sumario.html</output>
-				</html>
-			</SummaryGenModule>
+			<CodeGenModule>
+				<php>
+					<output>D:\Ingenieria Digital\Nueva Página Ingenieria Digital\Documentacion y Levantamiento de Informacion\codigo.php</output>
+					<extends>utilidad</extends>
+					<genConsts>N</genConsts>
+					<genNames>N</genNames>
+				</php>
+			</CodeGenModule>
 			<SqlGenModule>
 				<mysql>
 					<output>D:\wamp\www\sistema\Documentacion y Levantamiento de Informacion\script.sql</output>
 					<genRules>Y</genRules>
 				</mysql>
 			</SqlGenModule>
-			<CodeGenModule>
-				<php>
-					<output>D:\Ingenieria Digital\Nueva Página Ingenieria Digital\Documentacion y Levantamiento de Informacion\codigo.php</output>
-					<genConsts>N</genConsts>
-					<extends>utilidad</extends>
-					<genNames>N</genNames>
-				</php>
-			</CodeGenModule>
+			<SummaryGenModule>
+				<html>
+					<output>D:\Ingenieria Digital\Nueva Página Ingenieria Digital\Documentacion y Levantamiento de Informacion\sumario.html</output>
+				</html>
+			</SummaryGenModule>
 		</modsConfig>
 		<modsUsage>
 			<module name="SummaryGenModule.html"/>
@@ -6596,6 +6596,638 @@
 				<rules/>
 				<attribs>
 					<attrib name="comment"/>
+					<attrib name="name">ingreso</attrib>
+					<attrib name="id">147</attrib>
+					<attrib name="schema"/>
+					<attrib name="tempPK"/>
+					<attrib name="ghost">false</attrib>
+					<attrib name="tempFK"/>
+					<attrib name="tempOther"/>
+					<attrib name="sqlCommands"/>
+				</attribs>
+				<modsConfig>
+					<SqlGenModule>
+						<mysql>
+							<idx type="l">
+								<list>
+									<header>
+										<elem type="i">id</elem>
+										<elem type="s">index</elem>
+										<elem type="s">name</elem>
+									</header>
+									<row>
+										<elem>340</elem>
+										<elem>Idx1</elem>
+										<elem/>
+									</row>
+								</list>
+							</idx>
+						</mysql>
+					</SqlGenModule>
+				</modsConfig>
+				<docs>
+					<p>
+						<t>Pago de los alumnos a la empresa por los cursos realizados</t>
+					</p>
+				</docs>
+				<field>
+					<fieldAttribs>
+						<attribs>
+							<attrib name="86">false</attrib>
+							<attrib name="85">false</attrib>
+							<attrib name="84">false</attrib>
+							<attrib name="83">true</attrib>
+							<attrib name="17">true</attrib>
+							<attrib name="16">false</attrib>
+							<attrib name="15">true</attrib>
+							<attrib name="339"/>
+							<attrib name="338">false</attrib>
+							<attrib name="340">false</attrib>
+						</attribs>
+					</fieldAttribs>
+					<attribs>
+						<attrib name="comment"/>
+						<attrib name="matchType">s</attrib>
+						<attrib name="refField">0</attrib>
+						<attrib name="name">cod_ing</attrib>
+						<attrib name="id">148</attrib>
+						<attrib name="onDelete">n</attrib>
+						<attrib name="onUpdate">n</attrib>
+						<attrib name="refTable">0</attrib>
+						<attrib name="type">5</attrib>
+					</attribs>
+					<modsConfig/>
+					<docs>
+						<p>
+							<t>Código del Pago, Auto incremental</t>
+						</p>
+					</docs>
+				</field>
+				<field>
+					<fieldAttribs>
+						<attribs>
+							<attrib name="86">false</attrib>
+							<attrib name="85">false</attrib>
+							<attrib name="84">false</attrib>
+							<attrib name="83">false</attrib>
+							<attrib name="17">true</attrib>
+							<attrib name="16">false</attrib>
+							<attrib name="15">false</attrib>
+							<attrib name="339"/>
+							<attrib name="338">false</attrib>
+							<attrib name="340">false</attrib>
+						</attribs>
+					</fieldAttribs>
+					<attribs>
+						<attrib name="comment"/>
+						<attrib name="matchType">s</attrib>
+						<attrib name="refField">0</attrib>
+						<attrib name="name">reg_ing</attrib>
+						<attrib name="id">152150</attrib>
+						<attrib name="onDelete">n</attrib>
+						<attrib name="onUpdate">n</attrib>
+						<attrib name="refTable">0</attrib>
+						<attrib name="type">46</attrib>
+					</attribs>
+					<modsConfig/>
+					<docs>
+						<p>
+							<t>Fecha de Registro del Pago</t>
+						</p>
+					</docs>
+				</field>
+				<field>
+					<fieldAttribs>
+						<attribs>
+							<attrib name="86">false</attrib>
+							<attrib name="85">false</attrib>
+							<attrib name="84">false</attrib>
+							<attrib name="83">false</attrib>
+							<attrib name="17">true</attrib>
+							<attrib name="16">false</attrib>
+							<attrib name="15">false</attrib>
+							<attrib name="339"/>
+							<attrib name="338">false</attrib>
+							<attrib name="340">false</attrib>
+						</attribs>
+					</fieldAttribs>
+					<attribs>
+						<attrib name="comment"/>
+						<attrib name="matchType">s</attrib>
+						<attrib name="refField">0</attrib>
+						<attrib name="name">fec_ing</attrib>
+						<attrib name="id">149</attrib>
+						<attrib name="onDelete">n</attrib>
+						<attrib name="onUpdate">n</attrib>
+						<attrib name="refTable">0</attrib>
+						<attrib name="type">46</attrib>
+					</attribs>
+					<modsConfig/>
+					<docs>
+						<p>
+							<t>Fecha del pago en el banco vía transferencia, depósito, débito, crédito o efectivo</t>
+						</p>
+					</docs>
+				</field>
+				<field>
+					<fieldAttribs>
+						<attribs>
+							<attrib name="86">false</attrib>
+							<attrib name="85">false</attrib>
+							<attrib name="84">false</attrib>
+							<attrib name="83">false</attrib>
+							<attrib name="17">true</attrib>
+							<attrib name="16">true</attrib>
+							<attrib name="15">false</attrib>
+							<attrib name="339"/>
+							<attrib name="338">false</attrib>
+							<attrib name="340">false</attrib>
+						</attribs>
+					</fieldAttribs>
+					<attribs>
+						<attrib name="comment"/>
+						<attrib name="matchType">s</attrib>
+						<attrib name="refField">0</attrib>
+						<attrib name="name">ref_ing</attrib>
+						<attrib name="id">153</attrib>
+						<attrib name="onDelete">n</attrib>
+						<attrib name="onUpdate">n</attrib>
+						<attrib name="refTable">0</attrib>
+						<attrib name="type">1123</attrib>
+					</attribs>
+					<modsConfig/>
+					<docs>
+						<p>
+							<t>Número de Referencia del Depósito Bancario, Transferencia Bancaria, Punto de Venta, Recibo Manual de Pago(Efectivo).</t>
+						</p>
+					</docs>
+				</field>
+				<field>
+					<fieldAttribs>
+						<attribs>
+							<attrib name="86">false</attrib>
+							<attrib name="85">false</attrib>
+							<attrib name="84">false</attrib>
+							<attrib name="83">false</attrib>
+							<attrib name="17">false</attrib>
+							<attrib name="16">false</attrib>
+							<attrib name="15">false</attrib>
+							<attrib name="339"/>
+							<attrib name="338">false</attrib>
+							<attrib name="340">false</attrib>
+						</attribs>
+					</fieldAttribs>
+					<attribs>
+						<attrib name="comment"/>
+						<attrib name="matchType">s</attrib>
+						<attrib name="refField">0</attrib>
+						<attrib name="name">lot_ing</attrib>
+						<attrib name="id">148355</attrib>
+						<attrib name="onDelete">n</attrib>
+						<attrib name="onUpdate">n</attrib>
+						<attrib name="refTable">0</attrib>
+						<attrib name="type">1121</attrib>
+					</attribs>
+					<modsConfig/>
+					<docs>
+						<p>
+							<t>Representa al número de lote del punto de venta si el pago fué realizado con punto de venta.</t>
+						</p>
+					</docs>
+				</field>
+				<field>
+					<fieldAttribs>
+						<attribs>
+							<attrib name="86">false</attrib>
+							<attrib name="85">false</attrib>
+							<attrib name="84">false</attrib>
+							<attrib name="83">false</attrib>
+							<attrib name="17">true</attrib>
+							<attrib name="16">false</attrib>
+							<attrib name="15">false</attrib>
+							<attrib name="339"/>
+							<attrib name="338">false</attrib>
+							<attrib name="340">false</attrib>
+						</attribs>
+					</fieldAttribs>
+					<attribs>
+						<attrib name="comment"/>
+						<attrib name="matchType">s</attrib>
+						<attrib name="refField">0</attrib>
+						<attrib name="name">mon_ing</attrib>
+						<attrib name="id">33951</attrib>
+						<attrib name="onDelete">n</attrib>
+						<attrib name="onUpdate">n</attrib>
+						<attrib name="refTable">0</attrib>
+						<attrib name="type">26</attrib>
+					</attribs>
+					<modsConfig/>
+					<docs>
+						<p>
+							<t>Monto Total Pagado</t>
+						</p>
+					</docs>
+				</field>
+				<field>
+					<fieldAttribs>
+						<attribs>
+							<attrib name="86">false</attrib>
+							<attrib name="85">false</attrib>
+							<attrib name="84">false</attrib>
+							<attrib name="83">false</attrib>
+							<attrib name="17">true</attrib>
+							<attrib name="16">false</attrib>
+							<attrib name="15">false</attrib>
+							<attrib name="339"/>
+							<attrib name="338">false</attrib>
+							<attrib name="340">false</attrib>
+						</attribs>
+					</fieldAttribs>
+					<attribs>
+						<attrib name="comment"/>
+						<attrib name="matchType">s</attrib>
+						<attrib name="refField">118</attrib>
+						<attrib name="name">fky_curso</attrib>
+						<attrib name="id">151</attrib>
+						<attrib name="onDelete">r</attrib>
+						<attrib name="onUpdate">c</attrib>
+						<attrib name="refTable">112</attrib>
+						<attrib name="type">0</attrib>
+					</attribs>
+					<modsConfig/>
+					<docs>
+						<p>
+							<t>Curso que esta pagando el alumno</t>
+						</p>
+					</docs>
+				</field>
+				<field>
+					<fieldAttribs>
+						<attribs>
+							<attrib name="86">false</attrib>
+							<attrib name="85">false</attrib>
+							<attrib name="84">false</attrib>
+							<attrib name="83">false</attrib>
+							<attrib name="17">true</attrib>
+							<attrib name="16">false</attrib>
+							<attrib name="15">false</attrib>
+							<attrib name="339"/>
+							<attrib name="338">false</attrib>
+							<attrib name="340">false</attrib>
+						</attribs>
+					</fieldAttribs>
+					<attribs>
+						<attrib name="comment"/>
+						<attrib name="matchType">s</attrib>
+						<attrib name="refField">82645</attrib>
+						<attrib name="name">fky_alumno</attrib>
+						<attrib name="id">152</attrib>
+						<attrib name="onDelete">r</attrib>
+						<attrib name="onUpdate">c</attrib>
+						<attrib name="refTable">49</attrib>
+						<attrib name="type">0</attrib>
+					</attribs>
+					<modsConfig/>
+					<docs>
+						<p>
+							<t>Alumno que esta pagando</t>
+						</p>
+					</docs>
+				</field>
+				<field>
+					<fieldAttribs>
+						<attribs>
+							<attrib name="86">false</attrib>
+							<attrib name="85">false</attrib>
+							<attrib name="84">false</attrib>
+							<attrib name="83">false</attrib>
+							<attrib name="17">false</attrib>
+							<attrib name="16">false</attrib>
+							<attrib name="15">false</attrib>
+							<attrib name="339"/>
+							<attrib name="338">false</attrib>
+							<attrib name="340">false</attrib>
+						</attribs>
+					</fieldAttribs>
+					<attribs>
+						<attrib name="comment"/>
+						<attrib name="matchType">s</attrib>
+						<attrib name="refField">128</attrib>
+						<attrib name="name">fky_banco_origen</attrib>
+						<attrib name="id">85292</attrib>
+						<attrib name="onDelete">r</attrib>
+						<attrib name="onUpdate">c</attrib>
+						<attrib name="refTable">127</attrib>
+						<attrib name="type">0</attrib>
+					</attribs>
+					<modsConfig/>
+					<docs>
+						<p>
+							<t>Banco del Cliente(Opcional)</t>
+						</p>
+					</docs>
+				</field>
+				<field>
+					<fieldAttribs>
+						<attribs>
+							<attrib name="86">false</attrib>
+							<attrib name="85">false</attrib>
+							<attrib name="84">false</attrib>
+							<attrib name="83">false</attrib>
+							<attrib name="17">false</attrib>
+							<attrib name="16">false</attrib>
+							<attrib name="15">false</attrib>
+							<attrib name="339"/>
+							<attrib name="338">false</attrib>
+							<attrib name="340">false</attrib>
+						</attribs>
+					</fieldAttribs>
+					<attribs>
+						<attrib name="comment"/>
+						<attrib name="matchType">s</attrib>
+						<attrib name="refField">128</attrib>
+						<attrib name="name">fky_banco_destino</attrib>
+						<attrib name="id">154</attrib>
+						<attrib name="onDelete">r</attrib>
+						<attrib name="onUpdate">c</attrib>
+						<attrib name="refTable">127</attrib>
+						<attrib name="type">0</attrib>
+					</attribs>
+					<modsConfig/>
+					<docs>
+						<p>
+							<t>Banco de Ingeniería Digital a donde pagaron o transfieron (Opcional)</t>
+						</p>
+					</docs>
+				</field>
+				<field>
+					<fieldAttribs>
+						<attribs>
+							<attrib name="86">false</attrib>
+							<attrib name="85">false</attrib>
+							<attrib name="84">false</attrib>
+							<attrib name="83">false</attrib>
+							<attrib name="17">true</attrib>
+							<attrib name="16">false</attrib>
+							<attrib name="15">false</attrib>
+							<attrib name="339"/>
+							<attrib name="338">false</attrib>
+							<attrib name="340">false</attrib>
+						</attribs>
+					</fieldAttribs>
+					<attribs>
+						<attrib name="comment"/>
+						<attrib name="matchType">s</attrib>
+						<attrib name="refField">157</attrib>
+						<attrib name="name">fky_tipo_pago</attrib>
+						<attrib name="id">155</attrib>
+						<attrib name="onDelete">r</attrib>
+						<attrib name="onUpdate">c</attrib>
+						<attrib name="refTable">156</attrib>
+						<attrib name="type">0</attrib>
+					</attribs>
+					<modsConfig/>
+					<docs>
+						<p>
+							<t>Tipos de Pago:</t>
+						</p>
+						<p>
+							<t>1 - Efectivo</t>
+						</p>
+						<p>
+							<t>2 - Depósto Bancario</t>
+						</p>
+						<p>
+							<t>3 - Transferencia desde el mismo banco</t>
+						</p>
+						<p>
+							<t>4- Transferencia desde otro banco</t>
+						</p>
+						<p>
+							<t>5 - Efectivo</t>
+						</p>
+						<p>
+							<t>6 - Convenio Publicitario</t>
+						</p>
+						<p>
+							<t>7 - Tarjeta de Crédito</t>
+						</p>
+						<p>
+							<t>8 - Tarjeta de Débito</t>
+						</p>
+					</docs>
+				</field>
+				<field>
+					<fieldAttribs>
+						<attribs>
+							<attrib name="86">false</attrib>
+							<attrib name="85">false</attrib>
+							<attrib name="84">false</attrib>
+							<attrib name="83">false</attrib>
+							<attrib name="17">true</attrib>
+							<attrib name="16">false</attrib>
+							<attrib name="15">false</attrib>
+							<attrib name="339"/>
+							<attrib name="338">false</attrib>
+							<attrib name="340">false</attrib>
+						</attribs>
+					</fieldAttribs>
+					<attribs>
+						<attrib name="comment"/>
+						<attrib name="matchType">s</attrib>
+						<attrib name="refField">141</attrib>
+						<attrib name="name">fky_inscripcion</attrib>
+						<attrib name="id">170</attrib>
+						<attrib name="onDelete">r</attrib>
+						<attrib name="onUpdate">c</attrib>
+						<attrib name="refTable">140</attrib>
+						<attrib name="type">0</attrib>
+					</attribs>
+					<modsConfig/>
+					<docs>
+						<p>
+							<t>Apunta a la inscripción hecha por el alumno</t>
+						</p>
+					</docs>
+				</field>
+				<field>
+					<fieldAttribs>
+						<attribs>
+							<attrib name="86">false</attrib>
+							<attrib name="85">false</attrib>
+							<attrib name="84">false</attrib>
+							<attrib name="83">false</attrib>
+							<attrib name="17">true</attrib>
+							<attrib name="16">false</attrib>
+							<attrib name="15">false</attrib>
+							<attrib name="339"/>
+							<attrib name="338">false</attrib>
+							<attrib name="340">false</attrib>
+						</attribs>
+					</fieldAttribs>
+					<attribs>
+						<attrib name="comment"/>
+						<attrib name="matchType">s</attrib>
+						<attrib name="refField">179</attrib>
+						<attrib name="name">fky_tipo_movimiento</attrib>
+						<attrib name="id">87244</attrib>
+						<attrib name="onDelete">r</attrib>
+						<attrib name="onUpdate">c</attrib>
+						<attrib name="refTable">178</attrib>
+						<attrib name="type">0</attrib>
+					</attribs>
+					<modsConfig/>
+					<docs>
+						<p>
+							<t>Los tipos de Movimientos para controlar los ingresos y egresos del sistema.</t>
+						</p>
+						<p>
+							<t>1) Ingreso por curso</t>
+						</p>
+						<p>
+							<t>2) Egreso por Nómina</t>
+						</p>
+						<p>
+							<t>3) Egreso por Pago a Instructores</t>
+						</p>
+						<p>
+							<t>4) Egreso por Impuestos</t>
+						</p>
+						<p>
+							<t>5) Egreso por Material de Limpieza</t>
+						</p>
+						<p>
+							<t>6) Egreso por reposicion de equipos</t>
+						</p>
+						<p>
+							<t>7) Egreso por Reembolso</t>
+						</p>
+						<p>
+							<t>8) Egreso por Servicios Básicos</t>
+						</p>
+					</docs>
+				</field>
+				<field>
+					<fieldAttribs>
+						<attribs>
+							<attrib name="86">false</attrib>
+							<attrib name="85">false</attrib>
+							<attrib name="84">false</attrib>
+							<attrib name="83">false</attrib>
+							<attrib name="17">false</attrib>
+							<attrib name="16">false</attrib>
+							<attrib name="15">false</attrib>
+							<attrib name="339"/>
+							<attrib name="338">false</attrib>
+							<attrib name="340">false</attrib>
+						</attribs>
+					</fieldAttribs>
+					<attribs>
+						<attrib name="comment"/>
+						<attrib name="matchType">s</attrib>
+						<attrib name="refField">0</attrib>
+						<attrib name="name">url_ing</attrib>
+						<attrib name="id">85293</attrib>
+						<attrib name="onDelete">n</attrib>
+						<attrib name="onUpdate">n</attrib>
+						<attrib name="refTable">0</attrib>
+						<attrib name="type">67</attrib>
+					</attribs>
+					<modsConfig/>
+					<docs>
+						<p>
+							<t>URL del documento PDF donde se encuentra la imagen del pago</t>
+						</p>
+					</docs>
+				</field>
+				<field>
+					<fieldAttribs>
+						<attribs>
+							<attrib name="86">false</attrib>
+							<attrib name="85">false</attrib>
+							<attrib name="84">false</attrib>
+							<attrib name="83">false</attrib>
+							<attrib name="17">false</attrib>
+							<attrib name="16">false</attrib>
+							<attrib name="15">false</attrib>
+							<attrib name="339"/>
+							<attrib name="338">false</attrib>
+							<attrib name="340">false</attrib>
+						</attribs>
+					</fieldAttribs>
+					<attribs>
+						<attrib name="comment"/>
+						<attrib name="matchType">s</attrib>
+						<attrib name="refField">0</attrib>
+						<attrib name="name">obs_ing</attrib>
+						<attrib name="id">91248</attrib>
+						<attrib name="onDelete">n</attrib>
+						<attrib name="onUpdate">n</attrib>
+						<attrib name="refTable">0</attrib>
+						<attrib name="type">33</attrib>
+					</attribs>
+					<modsConfig/>
+					<docs>
+						<p>
+							<t>Observación del Pago</t>
+						</p>
+					</docs>
+				</field>
+				<field>
+					<fieldAttribs>
+						<attribs>
+							<attrib name="86">false</attrib>
+							<attrib name="85">false</attrib>
+							<attrib name="84">false</attrib>
+							<attrib name="83">false</attrib>
+							<attrib name="17">true</attrib>
+							<attrib name="16">false</attrib>
+							<attrib name="15">false</attrib>
+							<attrib name="339"/>
+							<attrib name="338">false</attrib>
+							<attrib name="340">false</attrib>
+						</attribs>
+					</fieldAttribs>
+					<attribs>
+						<attrib name="comment"/>
+						<attrib name="matchType">s</attrib>
+						<attrib name="refField">0</attrib>
+						<attrib name="name">est_ing</attrib>
+						<attrib name="id">160</attrib>
+						<attrib name="onDelete">n</attrib>
+						<attrib name="onUpdate">n</attrib>
+						<attrib name="refTable">0</attrib>
+						<attrib name="type">32</attrib>
+					</attribs>
+					<modsConfig/>
+					<docs>
+						<p>
+							<t>Estatus:</t>
+						</p>
+						<p>
+							<t>V: Pago Validado</t>
+						</p>
+						<p>
+							<t>N: Pago No validado</t>
+						</p>
+					</docs>
+				</field>
+			</table>
+			<table>
+				<vars>
+					<list>
+						<header>
+							<elem>name</elem>
+							<elem>type</elem>
+							<elem>value</elem>
+							<elem>descr</elem>
+						</header>
+					</list>
+				</vars>
+				<triggers/>
+				<rules/>
+				<attribs>
+					<attrib name="comment"/>
 					<attrib name="name">instructor</attrib>
 					<attrib name="id">103</attrib>
 					<attrib name="schema"/>
@@ -7984,638 +8616,6 @@
 						</p>
 						<p>
 							<t>I: Inactivo.</t>
-						</p>
-					</docs>
-				</field>
-			</table>
-			<table>
-				<vars>
-					<list>
-						<header>
-							<elem>name</elem>
-							<elem>type</elem>
-							<elem>value</elem>
-							<elem>descr</elem>
-						</header>
-					</list>
-				</vars>
-				<triggers/>
-				<rules/>
-				<attribs>
-					<attrib name="comment"/>
-					<attrib name="name">ingreso</attrib>
-					<attrib name="id">147</attrib>
-					<attrib name="schema"/>
-					<attrib name="tempPK"/>
-					<attrib name="ghost">false</attrib>
-					<attrib name="tempFK"/>
-					<attrib name="tempOther"/>
-					<attrib name="sqlCommands"/>
-				</attribs>
-				<modsConfig>
-					<SqlGenModule>
-						<mysql>
-							<idx type="l">
-								<list>
-									<header>
-										<elem type="i">id</elem>
-										<elem type="s">index</elem>
-										<elem type="s">name</elem>
-									</header>
-									<row>
-										<elem>340</elem>
-										<elem>Idx1</elem>
-										<elem/>
-									</row>
-								</list>
-							</idx>
-						</mysql>
-					</SqlGenModule>
-				</modsConfig>
-				<docs>
-					<p>
-						<t>Pago de los alumnos a la empresa por los cursos realizados</t>
-					</p>
-				</docs>
-				<field>
-					<fieldAttribs>
-						<attribs>
-							<attrib name="86">false</attrib>
-							<attrib name="85">false</attrib>
-							<attrib name="84">false</attrib>
-							<attrib name="83">true</attrib>
-							<attrib name="17">true</attrib>
-							<attrib name="16">false</attrib>
-							<attrib name="15">true</attrib>
-							<attrib name="339"/>
-							<attrib name="338">false</attrib>
-							<attrib name="340">false</attrib>
-						</attribs>
-					</fieldAttribs>
-					<attribs>
-						<attrib name="comment"/>
-						<attrib name="matchType">s</attrib>
-						<attrib name="refField">0</attrib>
-						<attrib name="name">cod_ing</attrib>
-						<attrib name="id">148</attrib>
-						<attrib name="onDelete">n</attrib>
-						<attrib name="onUpdate">n</attrib>
-						<attrib name="refTable">0</attrib>
-						<attrib name="type">5</attrib>
-					</attribs>
-					<modsConfig/>
-					<docs>
-						<p>
-							<t>Código del Pago, Auto incremental</t>
-						</p>
-					</docs>
-				</field>
-				<field>
-					<fieldAttribs>
-						<attribs>
-							<attrib name="86">false</attrib>
-							<attrib name="85">false</attrib>
-							<attrib name="84">false</attrib>
-							<attrib name="83">false</attrib>
-							<attrib name="17">true</attrib>
-							<attrib name="16">false</attrib>
-							<attrib name="15">false</attrib>
-							<attrib name="339"/>
-							<attrib name="338">false</attrib>
-							<attrib name="340">false</attrib>
-						</attribs>
-					</fieldAttribs>
-					<attribs>
-						<attrib name="comment"/>
-						<attrib name="matchType">s</attrib>
-						<attrib name="refField">0</attrib>
-						<attrib name="name">reg_ing</attrib>
-						<attrib name="id">152150</attrib>
-						<attrib name="onDelete">n</attrib>
-						<attrib name="onUpdate">n</attrib>
-						<attrib name="refTable">0</attrib>
-						<attrib name="type">46</attrib>
-					</attribs>
-					<modsConfig/>
-					<docs>
-						<p>
-							<t>Fecha de Registro del Pago</t>
-						</p>
-					</docs>
-				</field>
-				<field>
-					<fieldAttribs>
-						<attribs>
-							<attrib name="86">false</attrib>
-							<attrib name="85">false</attrib>
-							<attrib name="84">false</attrib>
-							<attrib name="83">false</attrib>
-							<attrib name="17">true</attrib>
-							<attrib name="16">false</attrib>
-							<attrib name="15">false</attrib>
-							<attrib name="339"/>
-							<attrib name="338">false</attrib>
-							<attrib name="340">false</attrib>
-						</attribs>
-					</fieldAttribs>
-					<attribs>
-						<attrib name="comment"/>
-						<attrib name="matchType">s</attrib>
-						<attrib name="refField">0</attrib>
-						<attrib name="name">fec_ing</attrib>
-						<attrib name="id">149</attrib>
-						<attrib name="onDelete">n</attrib>
-						<attrib name="onUpdate">n</attrib>
-						<attrib name="refTable">0</attrib>
-						<attrib name="type">46</attrib>
-					</attribs>
-					<modsConfig/>
-					<docs>
-						<p>
-							<t>Fecha del pago en el banco vía transferencia, depósito, débito, crédito o efectivo</t>
-						</p>
-					</docs>
-				</field>
-				<field>
-					<fieldAttribs>
-						<attribs>
-							<attrib name="86">false</attrib>
-							<attrib name="85">false</attrib>
-							<attrib name="84">false</attrib>
-							<attrib name="83">false</attrib>
-							<attrib name="17">true</attrib>
-							<attrib name="16">false</attrib>
-							<attrib name="15">false</attrib>
-							<attrib name="339"/>
-							<attrib name="338">false</attrib>
-							<attrib name="340">false</attrib>
-						</attribs>
-					</fieldAttribs>
-					<attribs>
-						<attrib name="comment"/>
-						<attrib name="matchType">s</attrib>
-						<attrib name="refField">0</attrib>
-						<attrib name="name">ref_ing</attrib>
-						<attrib name="id">153</attrib>
-						<attrib name="onDelete">n</attrib>
-						<attrib name="onUpdate">n</attrib>
-						<attrib name="refTable">0</attrib>
-						<attrib name="type">1123</attrib>
-					</attribs>
-					<modsConfig/>
-					<docs>
-						<p>
-							<t>Número de Referencia del Depósito Bancario, Transferencia Bancaria, Punto de Venta, Recibo Manual de Pago(Efectivo).</t>
-						</p>
-					</docs>
-				</field>
-				<field>
-					<fieldAttribs>
-						<attribs>
-							<attrib name="86">false</attrib>
-							<attrib name="85">false</attrib>
-							<attrib name="84">false</attrib>
-							<attrib name="83">false</attrib>
-							<attrib name="17">false</attrib>
-							<attrib name="16">false</attrib>
-							<attrib name="15">false</attrib>
-							<attrib name="339"/>
-							<attrib name="338">false</attrib>
-							<attrib name="340">false</attrib>
-						</attribs>
-					</fieldAttribs>
-					<attribs>
-						<attrib name="comment"/>
-						<attrib name="matchType">s</attrib>
-						<attrib name="refField">0</attrib>
-						<attrib name="name">lot_ing</attrib>
-						<attrib name="id">148355</attrib>
-						<attrib name="onDelete">n</attrib>
-						<attrib name="onUpdate">n</attrib>
-						<attrib name="refTable">0</attrib>
-						<attrib name="type">1121</attrib>
-					</attribs>
-					<modsConfig/>
-					<docs>
-						<p>
-							<t>Representa al número de lote del punto de venta si el pago fué realizado con punto de venta.</t>
-						</p>
-					</docs>
-				</field>
-				<field>
-					<fieldAttribs>
-						<attribs>
-							<attrib name="86">false</attrib>
-							<attrib name="85">false</attrib>
-							<attrib name="84">false</attrib>
-							<attrib name="83">false</attrib>
-							<attrib name="17">true</attrib>
-							<attrib name="16">false</attrib>
-							<attrib name="15">false</attrib>
-							<attrib name="339"/>
-							<attrib name="338">false</attrib>
-							<attrib name="340">false</attrib>
-						</attribs>
-					</fieldAttribs>
-					<attribs>
-						<attrib name="comment"/>
-						<attrib name="matchType">s</attrib>
-						<attrib name="refField">0</attrib>
-						<attrib name="name">mon_ing</attrib>
-						<attrib name="id">33951</attrib>
-						<attrib name="onDelete">n</attrib>
-						<attrib name="onUpdate">n</attrib>
-						<attrib name="refTable">0</attrib>
-						<attrib name="type">26</attrib>
-					</attribs>
-					<modsConfig/>
-					<docs>
-						<p>
-							<t>Monto Total Pagado</t>
-						</p>
-					</docs>
-				</field>
-				<field>
-					<fieldAttribs>
-						<attribs>
-							<attrib name="86">false</attrib>
-							<attrib name="85">false</attrib>
-							<attrib name="84">false</attrib>
-							<attrib name="83">false</attrib>
-							<attrib name="17">true</attrib>
-							<attrib name="16">false</attrib>
-							<attrib name="15">false</attrib>
-							<attrib name="339"/>
-							<attrib name="338">false</attrib>
-							<attrib name="340">false</attrib>
-						</attribs>
-					</fieldAttribs>
-					<attribs>
-						<attrib name="comment"/>
-						<attrib name="matchType">s</attrib>
-						<attrib name="refField">118</attrib>
-						<attrib name="name">fky_curso</attrib>
-						<attrib name="id">151</attrib>
-						<attrib name="onDelete">r</attrib>
-						<attrib name="onUpdate">c</attrib>
-						<attrib name="refTable">112</attrib>
-						<attrib name="type">0</attrib>
-					</attribs>
-					<modsConfig/>
-					<docs>
-						<p>
-							<t>Curso que esta pagando el alumno</t>
-						</p>
-					</docs>
-				</field>
-				<field>
-					<fieldAttribs>
-						<attribs>
-							<attrib name="86">false</attrib>
-							<attrib name="85">false</attrib>
-							<attrib name="84">false</attrib>
-							<attrib name="83">false</attrib>
-							<attrib name="17">true</attrib>
-							<attrib name="16">false</attrib>
-							<attrib name="15">false</attrib>
-							<attrib name="339"/>
-							<attrib name="338">false</attrib>
-							<attrib name="340">false</attrib>
-						</attribs>
-					</fieldAttribs>
-					<attribs>
-						<attrib name="comment"/>
-						<attrib name="matchType">s</attrib>
-						<attrib name="refField">82645</attrib>
-						<attrib name="name">fky_alumno</attrib>
-						<attrib name="id">152</attrib>
-						<attrib name="onDelete">r</attrib>
-						<attrib name="onUpdate">c</attrib>
-						<attrib name="refTable">49</attrib>
-						<attrib name="type">0</attrib>
-					</attribs>
-					<modsConfig/>
-					<docs>
-						<p>
-							<t>Alumno que esta pagando</t>
-						</p>
-					</docs>
-				</field>
-				<field>
-					<fieldAttribs>
-						<attribs>
-							<attrib name="86">false</attrib>
-							<attrib name="85">false</attrib>
-							<attrib name="84">false</attrib>
-							<attrib name="83">false</attrib>
-							<attrib name="17">false</attrib>
-							<attrib name="16">false</attrib>
-							<attrib name="15">false</attrib>
-							<attrib name="339"/>
-							<attrib name="338">false</attrib>
-							<attrib name="340">false</attrib>
-						</attribs>
-					</fieldAttribs>
-					<attribs>
-						<attrib name="comment"/>
-						<attrib name="matchType">s</attrib>
-						<attrib name="refField">128</attrib>
-						<attrib name="name">fky_banco_origen</attrib>
-						<attrib name="id">85292</attrib>
-						<attrib name="onDelete">r</attrib>
-						<attrib name="onUpdate">c</attrib>
-						<attrib name="refTable">127</attrib>
-						<attrib name="type">0</attrib>
-					</attribs>
-					<modsConfig/>
-					<docs>
-						<p>
-							<t>Banco del Cliente(Opcional)</t>
-						</p>
-					</docs>
-				</field>
-				<field>
-					<fieldAttribs>
-						<attribs>
-							<attrib name="86">false</attrib>
-							<attrib name="85">false</attrib>
-							<attrib name="84">false</attrib>
-							<attrib name="83">false</attrib>
-							<attrib name="17">false</attrib>
-							<attrib name="16">false</attrib>
-							<attrib name="15">false</attrib>
-							<attrib name="339"/>
-							<attrib name="338">false</attrib>
-							<attrib name="340">false</attrib>
-						</attribs>
-					</fieldAttribs>
-					<attribs>
-						<attrib name="comment"/>
-						<attrib name="matchType">s</attrib>
-						<attrib name="refField">128</attrib>
-						<attrib name="name">fky_banco_destino</attrib>
-						<attrib name="id">154</attrib>
-						<attrib name="onDelete">r</attrib>
-						<attrib name="onUpdate">c</attrib>
-						<attrib name="refTable">127</attrib>
-						<attrib name="type">0</attrib>
-					</attribs>
-					<modsConfig/>
-					<docs>
-						<p>
-							<t>Banco de Ingeniería Digital a donde pagaron o transfieron (Opcional)</t>
-						</p>
-					</docs>
-				</field>
-				<field>
-					<fieldAttribs>
-						<attribs>
-							<attrib name="86">false</attrib>
-							<attrib name="85">false</attrib>
-							<attrib name="84">false</attrib>
-							<attrib name="83">false</attrib>
-							<attrib name="17">true</attrib>
-							<attrib name="16">false</attrib>
-							<attrib name="15">false</attrib>
-							<attrib name="339"/>
-							<attrib name="338">false</attrib>
-							<attrib name="340">false</attrib>
-						</attribs>
-					</fieldAttribs>
-					<attribs>
-						<attrib name="comment"/>
-						<attrib name="matchType">s</attrib>
-						<attrib name="refField">157</attrib>
-						<attrib name="name">fky_tipo_pago</attrib>
-						<attrib name="id">155</attrib>
-						<attrib name="onDelete">r</attrib>
-						<attrib name="onUpdate">c</attrib>
-						<attrib name="refTable">156</attrib>
-						<attrib name="type">0</attrib>
-					</attribs>
-					<modsConfig/>
-					<docs>
-						<p>
-							<t>Tipos de Pago:</t>
-						</p>
-						<p>
-							<t>1 - Efectivo</t>
-						</p>
-						<p>
-							<t>2 - Depósto Bancario</t>
-						</p>
-						<p>
-							<t>3 - Transferencia desde el mismo banco</t>
-						</p>
-						<p>
-							<t>4- Transferencia desde otro banco</t>
-						</p>
-						<p>
-							<t>5 - Efectivo</t>
-						</p>
-						<p>
-							<t>6 - Convenio Publicitario</t>
-						</p>
-						<p>
-							<t>7 - Tarjeta de Crédito</t>
-						</p>
-						<p>
-							<t>8 - Tarjeta de Débito</t>
-						</p>
-					</docs>
-				</field>
-				<field>
-					<fieldAttribs>
-						<attribs>
-							<attrib name="86">false</attrib>
-							<attrib name="85">false</attrib>
-							<attrib name="84">false</attrib>
-							<attrib name="83">false</attrib>
-							<attrib name="17">true</attrib>
-							<attrib name="16">false</attrib>
-							<attrib name="15">false</attrib>
-							<attrib name="339"/>
-							<attrib name="338">false</attrib>
-							<attrib name="340">false</attrib>
-						</attribs>
-					</fieldAttribs>
-					<attribs>
-						<attrib name="comment"/>
-						<attrib name="matchType">s</attrib>
-						<attrib name="refField">141</attrib>
-						<attrib name="name">fky_inscripcion</attrib>
-						<attrib name="id">170</attrib>
-						<attrib name="onDelete">r</attrib>
-						<attrib name="onUpdate">c</attrib>
-						<attrib name="refTable">140</attrib>
-						<attrib name="type">0</attrib>
-					</attribs>
-					<modsConfig/>
-					<docs>
-						<p>
-							<t>Apunta a la inscripción hecha por el alumno</t>
-						</p>
-					</docs>
-				</field>
-				<field>
-					<fieldAttribs>
-						<attribs>
-							<attrib name="86">false</attrib>
-							<attrib name="85">false</attrib>
-							<attrib name="84">false</attrib>
-							<attrib name="83">false</attrib>
-							<attrib name="17">true</attrib>
-							<attrib name="16">false</attrib>
-							<attrib name="15">false</attrib>
-							<attrib name="339"/>
-							<attrib name="338">false</attrib>
-							<attrib name="340">false</attrib>
-						</attribs>
-					</fieldAttribs>
-					<attribs>
-						<attrib name="comment"/>
-						<attrib name="matchType">s</attrib>
-						<attrib name="refField">179</attrib>
-						<attrib name="name">fky_tipo_movimiento</attrib>
-						<attrib name="id">87244</attrib>
-						<attrib name="onDelete">r</attrib>
-						<attrib name="onUpdate">c</attrib>
-						<attrib name="refTable">178</attrib>
-						<attrib name="type">0</attrib>
-					</attribs>
-					<modsConfig/>
-					<docs>
-						<p>
-							<t>Los tipos de Movimientos para controlar los ingresos y egresos del sistema.</t>
-						</p>
-						<p>
-							<t>1) Ingreso por curso</t>
-						</p>
-						<p>
-							<t>2) Egreso por Nómina</t>
-						</p>
-						<p>
-							<t>3) Egreso por Pago a Instructores</t>
-						</p>
-						<p>
-							<t>4) Egreso por Impuestos</t>
-						</p>
-						<p>
-							<t>5) Egreso por Material de Limpieza</t>
-						</p>
-						<p>
-							<t>6) Egreso por reposicion de equipos</t>
-						</p>
-						<p>
-							<t>7) Egreso por Reembolso</t>
-						</p>
-						<p>
-							<t>8) Egreso por Servicios Básicos</t>
-						</p>
-					</docs>
-				</field>
-				<field>
-					<fieldAttribs>
-						<attribs>
-							<attrib name="86">false</attrib>
-							<attrib name="85">false</attrib>
-							<attrib name="84">false</attrib>
-							<attrib name="83">false</attrib>
-							<attrib name="17">false</attrib>
-							<attrib name="16">false</attrib>
-							<attrib name="15">false</attrib>
-							<attrib name="339"/>
-							<attrib name="338">false</attrib>
-							<attrib name="340">false</attrib>
-						</attribs>
-					</fieldAttribs>
-					<attribs>
-						<attrib name="comment"/>
-						<attrib name="matchType">s</attrib>
-						<attrib name="refField">0</attrib>
-						<attrib name="name">url_ing</attrib>
-						<attrib name="id">85293</attrib>
-						<attrib name="onDelete">n</attrib>
-						<attrib name="onUpdate">n</attrib>
-						<attrib name="refTable">0</attrib>
-						<attrib name="type">67</attrib>
-					</attribs>
-					<modsConfig/>
-					<docs>
-						<p>
-							<t>URL del documento PDF donde se encuentra la imagen del pago</t>
-						</p>
-					</docs>
-				</field>
-				<field>
-					<fieldAttribs>
-						<attribs>
-							<attrib name="86">false</attrib>
-							<attrib name="85">false</attrib>
-							<attrib name="84">false</attrib>
-							<attrib name="83">false</attrib>
-							<attrib name="17">false</attrib>
-							<attrib name="16">false</attrib>
-							<attrib name="15">false</attrib>
-							<attrib name="339"/>
-							<attrib name="338">false</attrib>
-							<attrib name="340">false</attrib>
-						</attribs>
-					</fieldAttribs>
-					<attribs>
-						<attrib name="comment"/>
-						<attrib name="matchType">s</attrib>
-						<attrib name="refField">0</attrib>
-						<attrib name="name">obs_ing</attrib>
-						<attrib name="id">91248</attrib>
-						<attrib name="onDelete">n</attrib>
-						<attrib name="onUpdate">n</attrib>
-						<attrib name="refTable">0</attrib>
-						<attrib name="type">33</attrib>
-					</attribs>
-					<modsConfig/>
-					<docs>
-						<p>
-							<t>Observación del Pago</t>
-						</p>
-					</docs>
-				</field>
-				<field>
-					<fieldAttribs>
-						<attribs>
-							<attrib name="86">false</attrib>
-							<attrib name="85">false</attrib>
-							<attrib name="84">false</attrib>
-							<attrib name="83">false</attrib>
-							<attrib name="17">true</attrib>
-							<attrib name="16">false</attrib>
-							<attrib name="15">false</attrib>
-							<attrib name="339"/>
-							<attrib name="338">false</attrib>
-							<attrib name="340">false</attrib>
-						</attribs>
-					</fieldAttribs>
-					<attribs>
-						<attrib name="comment"/>
-						<attrib name="matchType">s</attrib>
-						<attrib name="refField">0</attrib>
-						<attrib name="name">est_ing</attrib>
-						<attrib name="id">160</attrib>
-						<attrib name="onDelete">n</attrib>
-						<attrib name="onUpdate">n</attrib>
-						<attrib name="refTable">0</attrib>
-						<attrib name="type">32</attrib>
-					</attribs>
-					<modsConfig/>
-					<docs>
-						<p>
-							<t>Estatus:</t>
-						</p>
-						<p>
-							<t>V: Pago Validado</t>
-						</p>
-						<p>
-							<t>N: Pago No validado</t>
 						</p>
 					</docs>
 				</field>

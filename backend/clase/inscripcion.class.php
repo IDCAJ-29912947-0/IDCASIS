@@ -103,7 +103,7 @@ class inscripcion extends utilidad
                c.fky_tipo_curso=tc.cod_tip_cur
                $filtro1 $filtro2 $filtro3 $filtro4 $filtro5 $filtro6;";
 
-      echo $sql;         
+          
 
    	    return $this->ejecutar($sql);  
 

@@ -38,9 +38,28 @@ if($acceso["est_per"]=="A")
 			if($prk_aud>0){
 				$obj->auditoria($prk_aud);
 				$obj->mensaje("success","Pago registrado correctamente");
+   			    $carpeta=$obj->ruta_ingreso_backend;
+		        $nombre_final="ingreso_".$prk_aud;
+				$url_ingreso=$obj->subir_material($_FILES["url_ing"]["name"],$_FILES["url_ing"]["tmp_name"],$carpeta,$nombre_final);
+				if($url_ingreso!=false){
+ 					$obj->mensaje("success","Archivo subido correctamente al servidor.");
+ 					$res=$obj->modificar_url($prk_aud,$url_ingreso);
+ 					$fil_afe=$obj->filas_afectadas();
+ 					if($fil_afe==0)
+ 					{
+ 						$obj->mensaje("danger","No se pudo actualizar la url del archivo subido.");
+ 					}
+
+				}else{
+					$obj->mensaje("danger","Error al subir archivo al servidor.");
+				}
+
 			}else
 			{
-				$obj->mensaje("danger","Error al registrar Pago");
+
+				$error_nro=$obj->error_nro();
+				$mensaje=($error_nro==1062)?"Ya existe un pago anteriormente registrado con ese n&uacute;mero de referencia, por favor llamar 0276-356.16.43":"";
+				$obj->mensaje("danger","Error al registrar Pago. $mensaje");
 			}
 			
 		break;

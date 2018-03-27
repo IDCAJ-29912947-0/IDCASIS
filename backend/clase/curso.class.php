@@ -47,38 +47,39 @@ class curso extends utilidad
 //==============================================================================
    public function agregar(){
 
-    	$sql="insert into curso(
-            ini_cur,
-            fin_cur,
-            bas_cur,
-            iva_cur,
-            pre_cur,
-            dol_cur,
-            pag_cur,
-            obs_cur,
-            fk1_turno,
-            fk2_turno,
-            fky_horario, 
-            fky_tipo_curso, 
-            fky_instructor, 
-            fky_modalidad, 
-            est_cur
-      )values(
-            '$this->ini_cur',
-            '$this->fin_cur',
-             $this->bas_cur,
-             $this->iva_cur,
-             $this->pre_cur,
-             $this->dol_cur,
-             $this->pag_cur,
-            '$this->obs_cur',
-             $this->fk1_turno,
-             $this->fk2_turno,
-             $this->fky_horario, 
-             $this->fky_tipo_curso, 
-             $this->fky_instructor, 
-             $this->fky_modalidad, 
-            '$this->est_cur');";
+            	$sql="insert into curso(
+                    ini_cur,
+                    fin_cur,
+                    bas_cur,
+                    iva_cur,
+                    pre_cur,
+                    dol_cur,
+                    pag_cur,
+                    obs_cur,
+                    fk1_turno,
+                    fk2_turno,
+                    fky_horario, 
+                    fky_tipo_curso, 
+                    fky_instructor, 
+                    fky_modalidad, 
+                    est_cur
+              )values(
+                    '$this->ini_cur',
+                    '$this->fin_cur',
+                     $this->bas_cur,
+                     $this->iva_cur,
+                     $this->pre_cur,
+                     $this->dol_cur,
+                     $this->pag_cur,
+                    '$this->obs_cur',
+                     $this->fk1_turno,
+                     $this->fk2_turno,
+                     $this->fky_horario, 
+                     $this->fky_tipo_curso, 
+                     $this->fky_instructor, 
+                     $this->fky_modalidad, 
+                    '$this->est_cur');";
+                    
     	return $this->ejecutar($sql);
    }//Fin Agregar
 //==============================================================================
@@ -124,6 +125,26 @@ class curso extends utilidad
    		return $this->ejecutar($sql);
    	
    }//Fin Listar 
+
+//==============================================================================
+
+   public function listar_general(){
+      $sql="select c.*,t.*,h.nom_hor,tc.nom_tip_cur,i.nom_ins,i.ape_ins,m.nom_mod
+               from 
+                      curso c,turno t,horario h,tipo_curso tc ,instructor i,modalidad m
+               where 
+                     c.fk1_turno=t.cod_tur and 
+                     c.fky_horario=h.cod_hor and
+                     c.fky_tipo_curso=tc.cod_tip_cur and
+                     c.fky_instructor=i.cod_ins and
+                     c.fky_modalidad=m.cod_mod 
+                     order by c.ini_cur,tc.nom_tip_cur desc";
+
+                    
+      return $this->ejecutar($sql);
+    
+   }//Fin Listar 
+
 //==============================================================================
 
    public function eliminar(){
@@ -150,16 +171,16 @@ class curso extends utilidad
 
    	 	 $sql="select c.*,i.nom_ins,i.ape_ins,h.nom_hor,m.nom_mod, tc.nom_tip_cur from curso c, instructor i, horario h, modalidad m, tipo_curso tc
         where 
-        c.fky_instructor=i.cod_ins and
-        c.fky_horario=h.cod_hor and
-        c.fky_modalidad=m.cod_mod and
-        c.fky_tipo_curso=tc.cod_tip_cur
-        $filtro1 
-        $filtro2 
-        $filtro3 
-        $filtro4 
-        $filtro5 
-        $filtro6;";
+              c.fky_instructor=i.cod_ins and
+              c.fky_horario=h.cod_hor and
+              c.fky_modalidad=m.cod_mod and
+              c.fky_tipo_curso=tc.cod_tip_cur
+              $filtro1 
+              $filtro2 
+              $filtro3 
+              $filtro4 
+              $filtro5 
+              $filtro6;";
 
        
      
